@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="map" style="height: 100vh;"></div>
+
+<!-- Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Leaflet Providers -->
+<script src="https://unpkg.com/leaflet-providers@1.13.0/leaflet-providers.min.js"></script>
+
+<!-- Leaflet Geocoder CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+
+<!-- Leaflet Draw CSS & JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+<script>
+  // Initialize map
+  var map = L.map('map').setView([-8.91667, 33.56667], 8);
+
+  // Base maps
+  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  var satellite = L.tileLayer.provider('Esri.WorldImagery');
+  var hybrid = L.tileLayer.provider('Esri.WorldStreetMap');
+
+  var baseMaps = {
+    "OpenStreetMap": osm,
+    "Satellite": satellite,
+    "Hybrid": hybrid
+  };
+
+  L.control.layers(baseMaps).addTo(map);
+
+  // Add marker
+  var marker = L.marker([-8.91667, 33.56667]).addTo(map);
+  marker.bindPopup('<b>Hello!</b><br>HQ OF MOA.').openPopup();
+
+  // Add search bar (Geocoder)
+  L.Control.geocoder({
+    defaultMarkGeocode: true
+  }).addTo(map);
+
+  // Add draw control
+  var drawnItems = new L.FeatureGroup();
+  map.addLayer(drawnItems);
+
+  var drawControl = new L.Control.Draw({
+    edit: {
+      featureGroup: drawnItems
+    },
+    draw: {
+      polygon: true,
+      polyline: false,
+      rectangle: true,
+      circle: false,
+      marker: true,
+      circlemarker: false
+    }
+  });
+  map.addControl(drawControl);
+
+  // Handle created shapes
+  map.on(L.Draw.Event.CREATED, function (event) {
+    var layer = event.layer;
+    drawnItems.addLayer(layer);
+    if (layer instanceof L.Marker) {
+      layer.bindPopup("Umechagua eneo hapa.").openPopup();
+    }
+  });
+</script>
+{% endblock content %}

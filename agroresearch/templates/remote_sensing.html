@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Sensing</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 10px;
+            padding: 0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Remote Sensing</h1>
+    <p><strong>Remote Sensing</strong> is the process of acquiring information about the Earth's surface without direct physical contact. It involves using satellites, aircraft, drones, and other remote technologies to collect data.</p>
+    
+    <h3>Applications of Remote Sensing</h3>
+    <ul>
+        <li><strong>Agriculture:</strong> Monitoring crop health, soil moisture, and predicting yields.</li>
+        <li><strong>Environmental Monitoring:</strong> Detecting deforestation, climate change, and pollution.</li>
+        <li><strong>Disaster Management:</strong> Assessing flood impact, earthquake damage, and forest fires.</li>
+        <li><strong>Urban Planning:</strong> Mapping land use, infrastructure development, and city growth.</li>
+        <li><strong>Hydrology:</strong> Monitoring water bodies, groundwater levels, and precipitation patterns.</li>
+    </ul>
+
+    <h3>Types of Remote Sensing</h3>
+    <ul>
+        <li><strong>Passive Remote Sensing:</strong> Uses natural sunlight to capture images (e.g., optical satellites like Landsat).</li>
+        <li><strong>Active Remote Sensing:</strong> Uses sensors that emit signals (e.g., RADAR, LiDAR).</li>
+    </ul>
+
+    <h3>Popular Remote Sensing Satellites</h3>
+    <ul>
+        <li>Landsat Series</li>
+        <li>Sentinel-2</li>
+        <li>MODIS</li>
+        <li>ASTER</li>
+        <li>RADARSAT</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>Remote sensing plays a vital role in various fields, providing valuable data for decision-making, research, and sustainable development.</p>
+
+    <a href="{% url 'geographical_information_system' %}">Learn about GIS</a>| 
+    <a href="{% url 'application' %}">Application of GIS & RS</a>
+</body>
+</html>
+{% endblock content %}

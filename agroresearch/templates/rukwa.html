@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Rukwa Ward Map: Agricultural Suitability</h2>
+
+<div style="display: flex; gap: 2%; margin-top: 10px;">
+    <div id="map" style="height: 600px; width: 60%;"></div>
+    <div id="info" style="width: 35%; padding: 10px; border: 1px solid #ccc;">
+        <h3>Ward Information</h3>
+        <div id="details">Click a ward on the map to see details here.</div>
+    </div>
+</div>
+
+<!-- Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    const wardsGeoJson = {{ geojson_data|safe }};
+    const wardInfo = {{ ward_info|safe }};
+
+    const map = L.map('map').setView([-7.8, 31.8], 8);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+    }).addTo(map);
+
+    function getSuitableCrop(info) {
+        const ph = parseFloat(info.Soil_pH);
+        const temp = parseFloat(info.Temp);
+        const rain = parseFloat(info.Annual_Rainfall);
+        const soil = info.Soil_Type ? info.Soil_Type.toLowerCase() : "";
+
+        let suitable = [];
+
+        if (
+            ph >= 5.2 && ph <= 7.5 &&
+            temp >= 18 && temp <= 30 &&
+            rain >= 500 && rain <= 1200 &&
+            (soil.includes("loam") || soil.includes("sandy"))
+        ) {
+            suitable.push("Maize");
+        }
+
+        if (
+            ph >= 5.0 && ph <= 6.5 &&
+            temp >= 15 && temp <= 35 &&
+            rain >= 800 && rain <= 2000 &&
+            (soil.includes("clay") || soil.includes("silt") || soil.includes("loam"))
+        ) {
+            suitable.push("Rice");
+        }
+
+        return suitable.length ? suitable.join(" na ") : "None";
+    }
+
+    function updateInfo(props) {
+        if (props) {
+            const name = props.ward_name.trim();
+            const info = wardInfo[name];
+            if (info) {
+                const suitableCrop = getSuitableCrop(info);
+                document.getElementById('details').innerHTML = `
+                    <strong>${name}</strong><br/>
+                    Soil pH: ${info.Soil_pH}<br/>
+                    Soil Type: ${info.Soil_Type}<br/>
+                    Temperature: ${info.Temp} °C<br/>
+                    Annual Rainfall: ${info.Annual_Rainfall} mm<br/>
+                    <strong>Suitable Crop:</strong> ${suitableCrop}
+                `;
+            } else {
+                document.getElementById('details').innerHTML = `<strong>${name}</strong><br/>No data available`;
+            }
+        } else {
+            document.getElementById('details').innerHTML = 'Click a ward on the map to see details here.';
+        }
+    }
+
+    function style(feature) {
+        return {
+            fillColor: '#6baed6',
+            weight: 2,
+            opacity: 1,
+            color: 'white',
+            dashArray: '3',
+            fillOpacity: 0.7
+        };
+    }
+
+    function highlightFeature(e) {
+        const layer = e.target;
+        layer.setStyle({
+            weight: 4,
+            color: '#666',
+            fillOpacity: 0.9
+        });
+        updateInfo(layer.feature.properties);
+    }
+
+    function resetHighlight(e) {
+        geojson.resetStyle(e.target);
+        updateInfo(null);
+    }
+
+    function zoomToFeature(e) {
+        map.fitBounds(e.target.getBounds());
+    }
+
+    function onEachFeature(feature, layer) {
+        layer.on({
+            mouseover: highlightFeature,
+            mouseout: resetHighlight,
+            click: function (e) {
+                highlightFeature(e);
+                zoomToFeature(e);
+            }
+        });
+    }
+
+    const geojson = L.geoJSON(wardsGeoJson, {
+        style: style,
+        onEachFeature: onEachFeature
+    }).addTo(map);
+
+    updateInfo(null);
+</script>
+{% endblock %}

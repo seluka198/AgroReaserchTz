@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+           
+            text-align: center; /* Centers the content in the body */
+        }
+        .container {
+            width: 40%; /* Reduced width for a more centered form */
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input, textarea {
+            width: 50%; /* Full width of the container */
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px;
+            width: 50%; /* Full width button */
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+    </style>
+</head>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit",text-align='center'>Login</button>
+    </form>
+</body>
+</html>
+{% endblock content %}

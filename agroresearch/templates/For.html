@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="page-layout">
+    <div class="left">
+        <h2>Temperature Forecast (2025-2030)</h2>
+
+        <label for="regionSelect">Select Region:</label>
+        <select id="regionSelect">
+            <option value="Mbeya">Mbeya</option>
+            <option value="Rukwa">Rukwa</option>
+            <option value="Katavi">Katavi</option>
+            <option value="Songwe">Songwe</option>
+        </select>
+
+        <label for="yearSelect">Select Year:</label>
+        <select id="yearSelect">
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+        </select>
+
+        <button id="downloadBtn">Download CSV</button>
+
+        <canvas id="tempChart" width="800" height="400"></canvas>
+    </div>
+
+    <div class="right">
+        <div id="map"></div>
+    </div>
+</div>
+
+<style>
+    .page-layout {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 20px;
+    }
+    .left {
+        flex: 1;
+    }
+    .right {
+        flex: 1;
+        height: 500px;
+    }
+    canvas {
+        max-width: 100%;
+    }
+    label, select, button {
+        display: block;
+        margin: 10px 0;
+    }
+    #map {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+</style>
+
+<!-- Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const forecastData = {{ forecast_json|safe }};
+
+    const ctx = document.getElementById('tempChart').getContext('2d');
+    const regionSelect = document.getElementById('regionSelect');
+    const yearSelect = document.getElementById('yearSelect');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    let tempChart;
+
+    const regionCoords = {
+        'Mbeya': [-8.9, 33.45],
+        'Rukwa': [-7.96, 31.36],
+        'Katavi': [-6.6, 30.5],
+        'Songwe': [-8.2, 32.9]
+    };
+
+    const map = L.map('map').setView([-7, 34], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18
+    }).addTo(map);
+    let marker = null;
+
+    function updateMap(region) {
+        if (marker) map.removeLayer(marker);
+        const coord = regionCoords[region];
+        map.setView(coord, 7);
+        marker = L.marker(coord).addTo(map).bindPopup(`${region} Region`).openPopup();
+    }
+
+    function updateChart(region, year) {
+        const filtered = forecastData.Forecast.filter(d =>
+            d.region === region && d.month.startsWith(year)
+        ).sort((a, b) => new Date(a.month) - new Date(b.month));
+
+        const labels = filtered.map(d => d.month);
+        const temps = filtered.map(d => d.temperature);
+
+        if (tempChart) {
+            tempChart.data.labels = labels;
+            tempChart.data.datasets[0].data = temps;
+            tempChart.update();
+        } else {
+            tempChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Temperature (°C)',
+                        data: temps,
+                        borderColor: 'orange',
+                        fill: false,
+                        tension: 0.3,
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: { display: true, text: 'Temperature (°C)' }
+                        },
+                        x: {
+                            title: { display: true, text: 'Month' }
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    function downloadCSV(region, year) {
+        const data = forecastData.Forecast.filter(d =>
+            d.region === region && d.month.startsWith(year)
+        );
+        let csv = "Month,Temperature\n";
+        data.forEach(row => {
+            csv += `${row.month},${row.temperature}\n`;
+        });
+
+        const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.setAttribute("href", url);
+        link.setAttribute("download", `${region}_${year}_forecast.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    regionSelect.addEventListener('change', () => {
+        updateChart(regionSelect.value, yearSelect.value);
+        updateMap(regionSelect.value);
+    });
+
+    yearSelect.addEventListener('change', () => {
+        updateChart(regionSelect.value, yearSelect.value);
+    });
+
+    downloadBtn.addEventListener('click', () => {
+        downloadCSV(regionSelect.value, yearSelect.value);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        updateChart(regionSelect.value, yearSelect.value);
+        updateMap(regionSelect.value);
+    });
+</script>
+
+{% endblock %}

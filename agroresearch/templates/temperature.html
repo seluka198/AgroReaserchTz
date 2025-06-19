@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Visualization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            width: 200%;
+        }
+        .left-panel, .right-panel {
+            flex: 1 3 40%;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        #chart-container {
+            height: 400px;
+            width: 100%;
+        }
+        .controls {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>AgroResearchTZ – Temperature Monitoring</h2>
+
+    <div class="controls">
+        <label for="region-select">Select Region:</label>
+        <select id="region-select">
+            <option value="Mbeya">Mbeya</option>
+            <option value="Rukwa">Rukwa</option>
+            <option value="Katavi">Katavi</option>
+            <option value="Songwe">Songwe</option>
+            <option value="Njombe">Njombe</option>
+        </select>
+
+        <label for="month-select">Select Month:</label>
+        <select id="month-select">
+            <option value="year">Annual Average</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="left-panel">
+            <div id="map"></div>
+        </div>
+        <div class="right-panel">
+            <div id="chart-container">
+                <canvas id="chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const generateDailyTemps = (base, fluctuation = 3) => {
+            return Array.from({ length: 30 }, (_, i) => +(base + (Math.random() * fluctuation - fluctuation / 2)).toFixed(1));
+        };
+
+        const temperatureData = {
+            "Mbeya": {
+                "January": generateDailyTemps(20),
+                "February": generateDailyTemps(19),
+                "March": generateDailyTemps(21),
+                "April": generateDailyTemps(20),
+                "May": generateDailyTemps(9),
+                "June": generateDailyTemps(7),
+                "July": generateDailyTemps(6),
+                "August": generateDailyTemps(17),
+                "September": generateDailyTemps(19),
+                "October": generateDailyTemps(6),
+                "November": generateDailyTemps(21),
+                "December": generateDailyTemps(14)
+            },
+            "Rukwa": {
+                "January": generateDailyTemps(20),
+                "February": generateDailyTemps(25),
+                "March": generateDailyTemps(24),
+                "April": generateDailyTemps(23),
+                "May": generateDailyTemps(17),
+                "June": generateDailyTemps(14),
+                "July": generateDailyTemps(10),
+                "August": generateDailyTemps(19),
+                "September": generateDailyTemps(19),
+                "October": generateDailyTemps(21),
+                "November": generateDailyTemps(24),
+                "December": generateDailyTemps(25)
+            },
+            "Katavi": {
+                "January": generateDailyTemps(26),
+                "February": generateDailyTemps(26),
+                "March": generateDailyTemps(25),
+                "April": generateDailyTemps(24),
+                "May": generateDailyTemps(22),
+                "June": generateDailyTemps(21),
+                "July": generateDailyTemps(20),
+                "August": generateDailyTemps(21),
+                "September": generateDailyTemps(23),
+                "October": generateDailyTemps(24),
+                "November": generateDailyTemps(25),
+                "December": generateDailyTemps(26)
+            },
+            "Songwe": {
+                "January": generateDailyTemps(23),
+                "February": generateDailyTemps(23),
+                "March": generateDailyTemps(22),
+                "April": generateDailyTemps(21),
+                "May": generateDailyTemps(20),
+                "June": generateDailyTemps(18),
+                "July": generateDailyTemps(17),
+                "August": generateDailyTemps(18),
+                "September": generateDailyTemps(20),
+                "October": generateDailyTemps(21),
+                "November": generateDailyTemps(22),
+                "December": generateDailyTemps(23)
+            },
+            "Njombe": {
+                "January": generateDailyTemps(18),
+                "February": generateDailyTemps(18),
+                "March": generateDailyTemps(17),
+                "April": generateDailyTemps(16),
+                "May": generateDailyTemps(15),
+                "June": generateDailyTemps(14),
+                "July": generateDailyTemps(13),
+                "August": generateDailyTemps(14),
+                "September": generateDailyTemps(15),
+                "October": generateDailyTemps(16),
+                "November": generateDailyTemps(17),
+                "December": generateDailyTemps(18)
+            }
+        };
+
+        const regionCoords = {
+            "Mbeya": [-9.32, 33.70],
+            "Rukwa": [-7.80, 31.40],
+            "Katavi": [-6.82, 31.43],
+            "Songwe": [-9.25, 32.60],
+            "Njombe": [-9.33, 34.79]
+        };
+
+        const map = L.map('map').setView([-8.5, 33], 7);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 13,
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        let marker;
+
+        const ctx = document.getElementById('chart').getContext('2d');
+        let chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Object.keys(temperatureData["Mbeya"]),
+                datasets: [{
+                    label: 'Temperature (°C)',
+                    data: Object.values(temperatureData["Mbeya"]).map(month => (
+                        month.reduce((a, b) => a + b, 0) / month.length
+                    )),
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Temperature (°C)'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Time'
+                        }
+                    }
+                },
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Annual Average Temperature for Mbeya'
+                    }
+                }
+            }
+        });
+
+        const regionSelect = document.getElementById('region-select');
+        const monthSelect = document.getElementById('month-select');
+
+        function updateMapAndChart() {
+            const region = regionSelect.value || "Mbeya";
+            const month = monthSelect.value;
+
+            // Update map
+            if (marker) map.removeLayer(marker);
+            if (regionCoords[region]) {
+                const coords = regionCoords[region];
+                map.setView(coords, 9);
+                marker = L.marker(coords).addTo(map).bindPopup(`<b>${region}</b><br>${month !== 'year' ? month : 'Annual'} temperature`).openPopup();
+            }
+
+            if (!month || month === "year") {
+                chart.data.labels = Object.keys(temperatureData[region]);
+                chart.data.datasets[0].data = Object.values(temperatureData[region]).map(
+                    dailyTemps => dailyTemps.reduce((a, b) => a + b, 0) / dailyTemps.length
+                );
+                chart.options.plugins.title.text = `Annual Average Temperature for ${region}`;
+            } else {
+                const dailyTemps = temperatureData[region][month];
+                chart.data.labels = dailyTemps.map((_, i) => `Day ${i + 1}`);
+                chart.data.datasets[0].data = dailyTemps;
+                chart.options.plugins.title.text = `Daily Temperatures in ${month} for ${region}`;
+            }
+
+            chart.update();
+        }
+
+        regionSelect.addEventListener('change', updateMapAndChart);
+        monthSelect.addEventListener('change', updateMapAndChart);
+
+        updateMapAndChart(); // Initial load
+    </script>
+</body>
+</html>
+{% endblock content %}

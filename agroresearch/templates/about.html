@@ -1,0 +1,71 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Times New Roman', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            width: 70%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+      
+       
+     
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .highlight {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<div class="container">
+    <h2>Our Focus</h2>
+    <p>We specialize in analyzing soil pH using GIS technology and UAV-based remote sensing techniques. By integrating these technologies, we help farmers...</p>
+
+    <h2>How Remote Sensing Benefits Agriculture</h2>
+    <ul>
+        <li>Provides real-time soil and crop condition monitoring</li>
+        <li>Enhances precision farming practices</li>
+        <li>Optimizes fertilizer and irrigation management</li>
+        <li>Reduces environmental impact and resource wastage</li>
+        <li>Improves crop yield and sustainability</li>
+    </ul>
+
+    <h2>Join Us</h2>
+    <p>We welcome collaboration with farmers, researchers, and institutions to expand the impact of remote sensing in agriculture.</p>
+</div>
+
+</body>
+</html>
+{% endblock content %}

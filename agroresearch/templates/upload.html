@@ -1,0 +1,6 @@
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <label>Upload all TIF bands (e.g., B2.TIF to B6.TIF):</label><br>
+  <input type="file" name="tif_files" multiple required>
+  <button type="submit">Classify</button>
+</form>

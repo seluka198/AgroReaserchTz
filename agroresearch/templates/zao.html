@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Select Crop, Seed, and Region</h2>
+
+<div id="dropdowns" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px;">
+    <select id="crop-select" style="padding:6px; width: 30%;">
+        <option value="">-- Select Crop --</option>
+        <option value="Mahindi">Maize</option>
+        <option value="Mpunga">Rice plant</option>
+    </select>
+
+    <select id="seed-select" disabled style="padding:6px; width: 30%;">
+        <option value="">-- Seed Variety --</option>
+    </select>
+
+    <select id="region-select" disabled style="padding:6px; width: 30%;">
+        <option value="">-- Select Region --</option>
+    </select>
+</div>
+
+<div style="display: flex; height: 80vh;">
+    <div id="map" style="flex: 3; height: 100%; margin-right: 10px;"></div>
+    <div id="info-panel" style="flex: 1; padding: 10px; background-color: #f4f4f4; border-left: 1px solid #ccc; overflow-y: auto;">
+        <h3>Farms in Selected Region</h3>
+        <ul id="farm-list">
+            <li>Select crop and seed to view farms.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Leaflet libraries -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+<script>
+const map = L.map('map').setView([-8.9, 33], 7);
+
+// Base layers
+const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Earthstar Geographics',
+    maxZoom: 19
+});
+
+// Layer control
+L.control.layers({
+    "Street Map": osm,
+    "Satellite Map": satellite
+}).addTo(map);
+
+// Sample farm data
+const farms = [
+    { name: "Kapunga Rice Project", region: "Mbeya", lat: -8.55, lon: 34.2, crop: "Mpunga" },
+    { name: "Mbarali Estate", region: "Mbeya", lat: -8.5919, lon: 34.1345, crop: "Mpunga" },
+    { name: "Azimio Rice Millers", region: "Mbeya", lat: -8.7551, lon: 34.3845, crop: "Mpunga" },
+    { name: "Uyole", region: "Mbeya", lat: -8.9147, lon: 33.4417, crop: "Mahindi" },
+    { name: "Kyela", region: "Mbeya", lat: -9.32, lon: 33.93, crop: "Mahindi" },
+    { name: "Tukuyu", region: "Mbeya", lat: -9.44, lon: 33.41, crop: "Mahindi" },
+    { name: "Itaka", region: "Songwe", lat: -9.25, lon: 32.42, crop: "Mahindi" },
+    { name: "Kamsamba", region: "Songwe", lat: -9.17, lon: 32.45, crop: "Mahindi" },
+    { name: "Mtowisa", region: "Rukwa", lat: -7.25, lon: 31.48, crop: "Mpunga" },
+    { name: "Ilemba", region: "Rukwa", lat: -7.30, lon: 31.42, crop: "Mpunga" },
+    { name: "Mititi", region: "Rukwa", lat: -7.28, lon: 31.50, crop: "Mpunga" },
+    { name: "Kasekese", region: "Mpanda", lat: -6.32, lon: 31.38, crop: "Mpunga" },
+    { name: "Mwimbi AMCOS", region: "Rukwa", lat: -8.5667, lon: 31.6167, crop: "Mahindi" },
+    { name: "Mwamapuli Scheme", region: "Katavi", lat: -6.8205, lon: 30.4389, crop: "Mahindi" },
+    { name: "Kibaoni Scheme", region: "Katavi", lat: -6.85, lon: 31.6, crop: "Mahindi" },
+    { name: "Kirando Scheme", region: "Katavi", lat: -7.4166, lon: 30.600, crop: "Mpunga" },
+    { name: "Kabwe Scheme", region: "Katavi", lat: -7.415, lon: 30.601, crop: "Mahindi" },
+    { name: "Mbozi", region: "Songwe", lat: -9.05, lon: 32.767, crop: "Mpunga" },
+];
+
+const cropSeeds = {
+    "Mahindi": ["SEEDCO SC627", "DK 8031", "Pioneer 30G19"],
+    "Mpunga": ["TXD 306", "SARO 5", "Kihogo Red"]
+};
+
+const cropSelect = document.getElementById('crop-select');
+const seedSelect = document.getElementById('seed-select');
+const regionSelect = document.getElementById('region-select');
+const farmList = document.getElementById('farm-list');
+
+let userLocation = null;
+let routingControl = null;
+let markers = [];
+
+// Get user location
+function locateUser() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(pos => {
+            userLocation = [pos.coords.latitude, pos.coords.longitude];
+        });
+    }
+}
+
+// Clear previous map data
+function clearMap() {
+    markers.forEach(marker => map.removeLayer(marker));
+    markers = [];
+    if (routingControl) {
+        map.removeControl(routingControl);
+        routingControl = null;
+    }
+}
+
+// Show farms based on crop and region
+function showFarms(crop, region) {
+    clearMap();
+    const selectedFarms = farms.filter(f => f.crop === crop && f.region === region);
+    farmList.innerHTML = '';
+
+    selectedFarms.forEach(farm => {
+        const marker = L.marker([farm.lat, farm.lon])
+            .addTo(map)
+            .bindPopup(`<b>${farm.name}</b><br>${farm.region}`)
+            .on('click', () => showRouteToFarm(farm));
+        markers.push(marker);
+
+        const li = document.createElement('li');
+        li.textContent = farm.name;
+        li.style.cursor = 'pointer';
+        li.onclick = () => showRouteToFarm(farm);
+        farmList.appendChild(li);
+    });
+
+    if (selectedFarms.length) {
+        map.setView([selectedFarms[0].lat, selectedFarms[0].lon], 9);
+        showRouteToFarm(selectedFarms[0]);
+    } else {
+        farmList.innerHTML = '<li>No farms found for selected crop in this region.</li>';
+        map.setView([-8.9, 33], 7);
+    }
+}
+
+// Show route and calculate distance/time
+function showRouteToFarm(farm) {
+    if (!userLocation) {
+        alert("User location not available.");
+        return;
+    }
+
+    if (routingControl) {
+        map.removeControl(routingControl);
+    }
+
+    routingControl = L.Routing.control({
+        waypoints: [
+            L.latLng(userLocation[0], userLocation[1]),
+            L.latLng(farm.lat, farm.lon)
+        ],
+        routeWhileDragging: false,
+        show: false,
+        createMarker: () => null,
+        addWaypoints: false,
+        lineOptions: {
+            styles: [{ color: 'blue', opacity: 0.7, weight: 5 }]
+        }
+    }).on('routesfound', function (e) {
+        const route = e.routes[0];
+        const distanceKm = (route.summary.totalDistance / 1000).toFixed(2);
+        const timeMin = Math.round(route.summary.totalTime / 60);
+
+        const popupContent = `
+            <b>${farm.name}</b><br/>
+            ${farm.region}<br/>
+            <b>Distance:</b> ${distanceKm} km<br/>
+            <b>Estimated Time:</b> ${timeMin} minutes
+        `;
+
+        const marker = markers.find(m => 
+            m.getLatLng().lat === farm.lat && m.getLatLng().lng === farm.lon
+        );
+        if (marker) {
+            marker.setPopupContent(popupContent).openPopup();
+        }
+    }).addTo(map);
+}
+
+// Dropdown event handling
+cropSelect.addEventListener('change', () => {
+    const crop = cropSelect.value;
+    seedSelect.innerHTML = '<option value="">-- Seed Variety --</option>';
+    regionSelect.innerHTML = '<option value="">-- Select Region --</option>';
+    seedSelect.disabled = true;
+    regionSelect.disabled = true;
+    clearMap();
+    farmList.innerHTML = '<li>Select crop and seed to view farms.</li>';
+
+    if (crop && cropSeeds[crop]) {
+        cropSeeds[crop].forEach(seed => {
+            seedSelect.innerHTML += `<option value="${seed}">${seed}</option>`;
+        });
+        seedSelect.disabled = false;
+    }
+});
+
+seedSelect.addEventListener('change', () => {
+    const crop = cropSelect.value;
+    if (!crop) return;
+
+    const cropRegions = [...new Set(farms.filter(f => f.crop === crop).map(f => f.region))];
+    regionSelect.innerHTML = '<option value="">-- Select Region --</option>';
+    cropRegions.forEach(region => {
+        regionSelect.innerHTML += `<option value="${region}">${region}</option>`;
+    });
+    regionSelect.disabled = false;
+    clearMap();
+    farmList.innerHTML = '<li>Select a region to view farms.</li>';
+});
+
+regionSelect.addEventListener('change', () => {
+    const crop = cropSelect.value;
+    const region = regionSelect.value;
+    if (crop && region) {
+        showFarms(crop, region);
+    }
+});
+
+locateUser();
+
+</script>
+
+{% endblock %}

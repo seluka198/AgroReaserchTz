@@ -1,0 +1,641 @@
+year,month,temp,ADM2_NAME
+2010,Jan,22.30678883,Mlele
+2010,Jan,21.17680715,Mpanda Rural
+2010,Jan,22.42542021,Mpanda Urban
+2010,Jan,24.67678738,Administrative unit not available
+2010,Feb,22.70115847,Mlele
+2010,Feb,21.64304672,Mpanda Rural
+2010,Feb,22.89451597,Mpanda Urban
+2010,Feb,25.26846473,Administrative unit not available
+2010,Mar,22.31928549,Mlele
+2010,Mar,21.29843299,Mpanda Rural
+2010,Mar,22.45619589,Mpanda Urban
+2010,Mar,24.88821581,Administrative unit not available
+2010,Apr,23.14666901,Mlele
+2010,Apr,22.13526968,Mpanda Rural
+2010,Apr,23.36675599,Mpanda Urban
+2010,Apr,25.81368305,Administrative unit not available
+2010,May,23.56477773,Mlele
+2010,May,22.32883737,Mpanda Rural
+2010,May,23.58960449,Mpanda Urban
+2010,May,25.5199181,Administrative unit not available
+2010,Jun,22.52853416,Mlele
+2010,Jun,21.96791514,Mpanda Rural
+2010,Jun,22.8238768,Mpanda Urban
+2010,Jun,24.10970944,Administrative unit not available
+2010,Jul,22.04753662,Mlele
+2010,Jul,21.6979567,Mpanda Rural
+2010,Jul,22.47010585,Mpanda Urban
+2010,Jul,23.19398184,Administrative unit not available
+2010,Aug,23.09011593,Mlele
+2010,Aug,22.69335254,Mpanda Rural
+2010,Aug,23.58208322,Mpanda Urban
+2010,Aug,23.67553824,Administrative unit not available
+2010,Sep,25.18613002,Mlele
+2010,Sep,24.21914406,Mpanda Rural
+2010,Sep,25.82361059,Mpanda Urban
+2010,Sep,25.43601051,Administrative unit not available
+2010,Oct,26.73142551,Mlele
+2010,Oct,24.33398983,Mpanda Rural
+2010,Oct,26.92435375,Mpanda Urban
+2010,Oct,26.58251923,Administrative unit not available
+2010,Nov,25.54703329,Mlele
+2010,Nov,22.42751044,Mpanda Rural
+2010,Nov,25.2227354,Mpanda Urban
+2010,Nov,26.00080982,Administrative unit not available
+2010,Dec,22.22148407,Mlele
+2010,Dec,20.77539458,Mpanda Rural
+2010,Dec,22.41344594,Mpanda Urban
+2010,Dec,24.44814534,Administrative unit not available
+2011,Jan,22.0730347,Mlele
+2011,Jan,20.68639394,Mpanda Rural
+2011,Jan,22.07944306,Mpanda Urban
+2011,Jan,24.38414013,Administrative unit not available
+2011,Feb,22.48443026,Mlele
+2011,Feb,21.10911308,Mpanda Rural
+2011,Feb,22.39029108,Mpanda Urban
+2011,Feb,24.77640112,Administrative unit not available
+2011,Mar,22.1419816,Mlele
+2011,Mar,20.87890512,Mpanda Rural
+2011,Mar,22.26393909,Mpanda Urban
+2011,Mar,24.41956252,Administrative unit not available
+2011,Apr,22.00510726,Mlele
+2011,Apr,21.24145596,Mpanda Rural
+2011,Apr,22.38441242,Mpanda Urban
+2011,Apr,24.70132552,Administrative unit not available
+2011,May,23.20562888,Mlele
+2011,May,22.14189714,Mpanda Rural
+2011,May,23.51391543,Mpanda Urban
+2011,May,25.29430052,Administrative unit not available
+2011,Jun,22.8512014,Mlele
+2011,Jun,22.14896055,Mpanda Rural
+2011,Jun,23.43861394,Mpanda Urban
+2011,Jun,24.5228784,Administrative unit not available
+2011,Jul,22.11107083,Mlele
+2011,Jul,21.70008349,Mpanda Rural
+2011,Jul,22.69626324,Mpanda Urban
+2011,Jul,23.42606649,Administrative unit not available
+2011,Aug,23.61290854,Mlele
+2011,Aug,22.85852181,Mpanda Rural
+2011,Aug,24.09662507,Mpanda Urban
+2011,Aug,24.18458713,Administrative unit not available
+2011,Sep,25.10530404,Mlele
+2011,Sep,23.97680679,Mpanda Rural
+2011,Sep,25.71580208,Mpanda Urban
+2011,Sep,25.56015048,Administrative unit not available
+2011,Oct,25.66742531,Mlele
+2011,Oct,22.61234021,Mpanda Rural
+2011,Oct,25.3641275,Mpanda Urban
+2011,Oct,25.71227457,Administrative unit not available
+2011,Nov,23.11265124,Mlele
+2011,Nov,20.95481848,Mpanda Rural
+2011,Nov,23.08782708,Mpanda Urban
+2011,Nov,24.54922827,Administrative unit not available
+2011,Dec,21.71300571,Mlele
+2011,Dec,20.46962907,Mpanda Rural
+2011,Dec,21.84070941,Mpanda Urban
+2011,Dec,24.10798645,Administrative unit not available
+2012,Jan,22.38180196,Mlele
+2012,Jan,21.0351642,Mpanda Rural
+2012,Jan,22.31778583,Mpanda Urban
+2012,Jan,24.758386,Administrative unit not available
+2012,Feb,22.43490803,Mlele
+2012,Feb,20.86279149,Mpanda Rural
+2012,Feb,22.2234754,Mpanda Urban
+2012,Feb,24.7762142,Administrative unit not available
+2012,Mar,22.52155703,Mlele
+2012,Mar,21.15209505,Mpanda Rural
+2012,Mar,22.50710819,Mpanda Urban
+2012,Mar,25.10732837,Administrative unit not available
+2012,Apr,22.03795128,Mlele
+2012,Apr,20.83981937,Mpanda Rural
+2012,Apr,22.24393181,Mpanda Urban
+2012,Apr,24.52809214,Administrative unit not available
+2012,May,22.62952215,Mlele
+2012,May,21.21597909,Mpanda Rural
+2012,May,22.87824574,Mpanda Urban
+2012,May,24.59580021,Administrative unit not available
+2012,Jun,22.11041858,Mlele
+2012,Jun,21.17752094,Mpanda Rural
+2012,Jun,22.51516855,Mpanda Urban
+2012,Jun,23.68211215,Administrative unit not available
+2012,Jul,21.98416709,Mlele
+2012,Jul,21.54195069,Mpanda Rural
+2012,Jul,22.82204988,Mpanda Urban
+2012,Jul,23.42055672,Administrative unit not available
+2012,Aug,23.5918263,Mlele
+2012,Aug,22.47039707,Mpanda Rural
+2012,Aug,24.26540948,Mpanda Urban
+2012,Aug,24.32930005,Administrative unit not available
+2012,Sep,25.53824624,Mlele
+2012,Sep,24.10714043,Mpanda Rural
+2012,Sep,26.21466723,Mpanda Urban
+2012,Sep,25.89561424,Administrative unit not available
+2012,Oct,26.39024245,Mlele
+2012,Oct,23.79391391,Mpanda Rural
+2012,Oct,26.47604154,Mpanda Urban
+2012,Oct,26.49097754,Administrative unit not available
+2012,Nov,23.57794992,Mlele
+2012,Nov,21.17037735,Mpanda Rural
+2012,Nov,23.17172129,Mpanda Urban
+2012,Nov,24.74866482,Administrative unit not available
+2012,Dec,22.56493709,Mlele
+2012,Dec,20.67291132,Mpanda Rural
+2012,Dec,22.40062017,Mpanda Urban
+2012,Dec,24.18304856,Administrative unit not available
+2013,Jan,22.54284685,Mlele
+2013,Jan,21.32746371,Mpanda Rural
+2013,Jan,22.74080182,Mpanda Urban
+2013,Jan,24.73101688,Administrative unit not available
+2013,Feb,22.94303785,Mlele
+2013,Feb,21.61017114,Mpanda Rural
+2013,Feb,22.98654577,Mpanda Urban
+2013,Feb,25.27923236,Administrative unit not available
+2013,Mar,22.4641318,Mlele
+2013,Mar,21.20784019,Mpanda Rural
+2013,Mar,22.66178911,Mpanda Urban
+2013,Mar,24.7536248,Administrative unit not available
+2013,Apr,21.73791358,Mlele
+2013,Apr,20.69559165,Mpanda Rural
+2013,Apr,21.95465712,Mpanda Urban
+2013,Apr,24.46920565,Administrative unit not available
+2013,May,22.85795632,Mlele
+2013,May,21.58500435,Mpanda Rural
+2013,May,23.00410341,Mpanda Urban
+2013,May,24.92418395,Administrative unit not available
+2013,Jun,21.78305216,Mlele
+2013,Jun,21.21519791,Mpanda Rural
+2013,Jun,22.35465326,Mpanda Urban
+2013,Jun,23.58716617,Administrative unit not available
+2013,Jul,21.87080624,Mlele
+2013,Jul,21.35163084,Mpanda Rural
+2013,Jul,22.52054272,Mpanda Urban
+2013,Jul,23.20747263,Administrative unit not available
+2013,Aug,23.46713796,Mlele
+2013,Aug,22.8639747,Mpanda Rural
+2013,Aug,24.1159357,Mpanda Urban
+2013,Aug,24.09380088,Administrative unit not available
+2013,Sep,25.55414969,Mlele
+2013,Sep,23.88975727,Mpanda Rural
+2013,Sep,26.02815938,Mpanda Urban
+2013,Sep,25.68276351,Administrative unit not available
+2013,Oct,26.36251089,Mlele
+2013,Oct,23.88832671,Mpanda Rural
+2013,Oct,26.65309979,Mpanda Urban
+2013,Oct,26.41357218,Administrative unit not available
+2013,Nov,25.10655211,Mlele
+2013,Nov,21.88268962,Mpanda Rural
+2013,Nov,24.57987008,Mpanda Urban
+2013,Nov,25.44987454,Administrative unit not available
+2013,Dec,21.93538996,Mlele
+2013,Dec,20.51403216,Mpanda Rural
+2013,Dec,22.0610038,Mpanda Urban
+2013,Dec,24.03227751,Administrative unit not available
+2014,Jan,22.18673437,Mlele
+2014,Jan,20.9797017,Mpanda Rural
+2014,Jan,22.31937283,Mpanda Urban
+2014,Jan,24.57082427,Administrative unit not available
+2014,Feb,22.32961855,Mlele
+2014,Feb,21.08730283,Mpanda Rural
+2014,Feb,22.38208621,Mpanda Urban
+2014,Feb,24.81529251,Administrative unit not available
+2014,Mar,22.36519659,Mlele
+2014,Mar,21.17649153,Mpanda Rural
+2014,Mar,22.58488833,Mpanda Urban
+2014,Mar,24.67245292,Administrative unit not available
+2014,Apr,21.78906528,Mlele
+2014,Apr,20.83132767,Mpanda Rural
+2014,Apr,22.04579743,Mpanda Urban
+2014,Apr,24.40037786,Administrative unit not available
+2014,May,23.20805743,Mlele
+2014,May,22.14622019,Mpanda Rural
+2014,May,23.4818356,Mpanda Urban
+2014,May,25.16084871,Administrative unit not available
+2014,Jun,22.59415147,Mlele
+2014,Jun,21.95873154,Mpanda Rural
+2014,Jun,23.10206734,Mpanda Urban
+2014,Jun,24.12497454,Administrative unit not available
+2014,Jul,22.33949572,Mlele
+2014,Jul,21.9250897,Mpanda Rural
+2014,Jul,23.01830391,Mpanda Urban
+2014,Jul,23.44044829,Administrative unit not available
+2014,Aug,24.03358688,Mlele
+2014,Aug,23.02279786,Mpanda Rural
+2014,Aug,24.58857229,Mpanda Urban
+2014,Aug,24.63398565,Administrative unit not available
+2014,Sep,25.28978531,Mlele
+2014,Sep,23.88894486,Mpanda Rural
+2014,Sep,26.00946936,Mpanda Urban
+2014,Sep,25.53576974,Administrative unit not available
+2014,Oct,25.33112956,Mlele
+2014,Oct,23.16828346,Mpanda Rural
+2014,Oct,25.60359344,Mpanda Urban
+2014,Oct,26.16072203,Administrative unit not available
+2014,Nov,25.4570886,Mlele
+2014,Nov,22.72503715,Mpanda Rural
+2014,Nov,25.30990802,Mpanda Urban
+2014,Nov,26.00989463,Administrative unit not available
+2014,Dec,22.83350832,Mlele
+2014,Dec,21.20536362,Mpanda Rural
+2014,Dec,23.04289513,Mpanda Urban
+2014,Dec,24.81966102,Administrative unit not available
+2015,Jan,22.30976154,Mlele
+2015,Jan,21.00119985,Mpanda Rural
+2015,Jan,22.28976238,Mpanda Urban
+2015,Jan,24.72505054,Administrative unit not available
+2015,Feb,23.01406096,Mlele
+2015,Feb,21.66534837,Mpanda Rural
+2015,Feb,22.90193358,Mpanda Urban
+2015,Feb,25.29855835,Administrative unit not available
+2015,Mar,23.14726201,Mlele
+2015,Mar,21.77437636,Mpanda Rural
+2015,Mar,23.0159144,Mpanda Urban
+2015,Mar,25.3527573,Administrative unit not available
+2015,Apr,21.63263859,Mlele
+2015,Apr,20.5279753,Mpanda Rural
+2015,Apr,21.83801573,Mpanda Urban
+2015,Apr,24.26521457,Administrative unit not available
+2015,May,22.33109196,Mlele
+2015,May,21.39049567,Mpanda Rural
+2015,May,22.8714135,Mpanda Urban
+2015,May,25.01188379,Administrative unit not available
+2015,Jun,22.59994583,Mlele
+2015,Jun,21.64459844,Mpanda Rural
+2015,Jun,23.05602059,Mpanda Urban
+2015,Jun,24.38494067,Administrative unit not available
+2015,Jul,22.53369073,Mlele
+2015,Jul,21.94269801,Mpanda Rural
+2015,Jul,23.06489291,Mpanda Urban
+2015,Jul,23.9475809,Administrative unit not available
+2015,Aug,23.68401905,Mlele
+2015,Aug,23.06580253,Mpanda Rural
+2015,Aug,24.2959674,Mpanda Urban
+2015,Aug,24.52274657,Administrative unit not available
+2015,Sep,25.95557367,Mlele
+2015,Sep,24.96414853,Mpanda Rural
+2015,Sep,26.65870742,Mpanda Urban
+2015,Sep,26.2147189,Administrative unit not available
+2015,Oct,26.44036635,Mlele
+2015,Oct,23.72265305,Mpanda Rural
+2015,Oct,26.39353,Mpanda Urban
+2015,Oct,26.51737942,Administrative unit not available
+2015,Nov,22.84726265,Mlele
+2015,Nov,21.25111594,Mpanda Rural
+2015,Nov,23.09506382,Mpanda Urban
+2015,Nov,24.72354689,Administrative unit not available
+2015,Dec,22.25301662,Mlele
+2015,Dec,20.91135142,Mpanda Rural
+2015,Dec,22.39342405,Mpanda Urban
+2015,Dec,24.4747766,Administrative unit not available
+2016,Jan,22.33257612,Mlele
+2016,Jan,21.2960884,Mpanda Rural
+2016,Jan,22.52637475,Mpanda Urban
+2016,Jan,24.74885178,Administrative unit not available
+2016,Feb,23.08536289,Mlele
+2016,Feb,22.02986332,Mpanda Rural
+2016,Feb,23.33379196,Mpanda Urban
+2016,Feb,25.52532209,Administrative unit not available
+2016,Mar,23.97936742,Mlele
+2016,Mar,22.66965512,Mpanda Rural
+2016,Mar,24.08791689,Mpanda Urban
+2016,Mar,26.38675873,Administrative unit not available
+2016,Apr,22.30901439,Mlele
+2016,Apr,21.28436843,Mpanda Rural
+2016,Apr,22.57874956,Mpanda Urban
+2016,Apr,24.81317147,Administrative unit not available
+2016,May,22.04327288,Mlele
+2016,May,21.26731355,Mpanda Rural
+2016,May,22.5583597,Mpanda Urban
+2016,May,24.41272131,Administrative unit not available
+2016,Jun,21.87740772,Mlele
+2016,Jun,21.33710832,Mpanda Rural
+2016,Jun,22.4316501,Mpanda Urban
+2016,Jun,23.54288375,Administrative unit not available
+2016,Jul,21.68362697,Mlele
+2016,Jul,21.30633145,Mpanda Rural
+2016,Jul,22.35019537,Mpanda Urban
+2016,Jul,22.97223184,Administrative unit not available
+2016,Aug,23.34560346,Mlele
+2016,Aug,22.91132063,Mpanda Rural
+2016,Aug,24.0989576,Mpanda Urban
+2016,Aug,24.27493873,Administrative unit not available
+2016,Sep,25.06345837,Mlele
+2016,Sep,24.31666224,Mpanda Rural
+2016,Sep,25.96544923,Mpanda Urban
+2016,Sep,25.43958142,Administrative unit not available
+2016,Oct,26.39682153,Mlele
+2016,Oct,24.52728902,Mpanda Rural
+2016,Oct,26.90933074,Mpanda Urban
+2016,Oct,26.81753871,Administrative unit not available
+2016,Nov,25.66521662,Mlele
+2016,Nov,22.6624388,Mpanda Rural
+2016,Nov,25.48376607,Mpanda Urban
+2016,Nov,26.11563339,Administrative unit not available
+2016,Dec,23.15673812,Mlele
+2016,Dec,21.1895271,Mpanda Rural
+2016,Dec,23.02607453,Mpanda Urban
+2016,Dec,24.92960072,Administrative unit not available
+2017,Jan,23.10671032,Mlele
+2017,Jan,21.51464772,Mpanda Rural
+2017,Jan,23.08278668,Mpanda Urban
+2017,Jan,25.25996899,Administrative unit not available
+2017,Feb,22.73368208,Mlele
+2017,Feb,21.28096701,Mpanda Rural
+2017,Feb,22.76789215,Mpanda Urban
+2017,Feb,25.01548553,Administrative unit not available
+2017,Mar,22.40122604,Mlele
+2017,Mar,21.1472445,Mpanda Rural
+2017,Mar,22.54298949,Mpanda Urban
+2017,Mar,24.84713212,Administrative unit not available
+2017,Apr,22.54346232,Mlele
+2017,Apr,21.63386981,Mpanda Rural
+2017,Apr,22.82813524,Mpanda Urban
+2017,Apr,25.01730887,Administrative unit not available
+2017,May,23.22712158,Mlele
+2017,May,22.02404186,Mpanda Rural
+2017,May,23.48746515,Mpanda Urban
+2017,May,25.06558482,Administrative unit not available
+2017,Jun,23.1424618,Mlele
+2017,Jun,22.24774459,Mpanda Rural
+2017,Jun,23.51643812,Mpanda Urban
+2017,Jun,24.31297987,Administrative unit not available
+2017,Jul,22.97305868,Mlele
+2017,Jul,22.2705707,Mpanda Rural
+2017,Jul,23.58909037,Mpanda Urban
+2017,Jul,23.71082674,Administrative unit not available
+2017,Aug,24.17845073,Mlele
+2017,Aug,23.16324516,Mpanda Rural
+2017,Aug,24.6421051,Mpanda Urban
+2017,Aug,24.60057405,Administrative unit not available
+2017,Sep,25.29698668,Mlele
+2017,Sep,24.18024237,Mpanda Rural
+2017,Sep,25.98898425,Mpanda Urban
+2017,Sep,25.87544958,Administrative unit not available
+2017,Oct,25.68429066,Mlele
+2017,Oct,23.31501353,Mpanda Rural
+2017,Oct,25.56148227,Mpanda Urban
+2017,Oct,26.42688517,Administrative unit not available
+2017,Nov,22.88864487,Mlele
+2017,Nov,21.17306889,Mpanda Rural
+2017,Nov,22.88998726,Mpanda Urban
+2017,Nov,24.70377653,Administrative unit not available
+2017,Dec,22.22013377,Mlele
+2017,Dec,20.75376216,Mpanda Rural
+2017,Dec,22.10478872,Mpanda Urban
+2017,Dec,24.4276176,Administrative unit not available
+2018,Jan,21.34635918,Mlele
+2018,Jan,20.31247115,Mpanda Rural
+2018,Jan,21.46147714,Mpanda Urban
+2018,Jan,23.88349547,Administrative unit not available
+2018,Feb,23.05528622,Mlele
+2018,Feb,21.77021808,Mpanda Rural
+2018,Feb,23.05516211,Mpanda Urban
+2018,Feb,25.49654809,Administrative unit not available
+2018,Mar,21.87303159,Mlele
+2018,Mar,20.90658007,Mpanda Rural
+2018,Mar,22.1107718,Mpanda Urban
+2018,Mar,24.33969094,Administrative unit not available
+2018,Apr,21.08298956,Mlele
+2018,Apr,20.11842377,Mpanda Rural
+2018,Apr,21.3968557,Mpanda Urban
+2018,Apr,23.72740111,Administrative unit not available
+2018,May,22.01830058,Mlele
+2018,May,21.00451029,Mpanda Rural
+2018,May,22.36686471,Mpanda Urban
+2018,May,24.75032423,Administrative unit not available
+2018,Jun,21.83016878,Mlele
+2018,Jun,20.96585019,Mpanda Rural
+2018,Jun,22.28931594,Mpanda Urban
+2018,Jun,23.70752777,Administrative unit not available
+2018,Jul,21.31533396,Mlele
+2018,Jul,20.66237225,Mpanda Rural
+2018,Jul,21.54723774,Mpanda Urban
+2018,Jul,22.68764565,Administrative unit not available
+2018,Aug,23.30694776,Mlele
+2018,Aug,22.51289718,Mpanda Rural
+2018,Aug,23.87037607,Mpanda Urban
+2018,Aug,24.06508425,Administrative unit not available
+2018,Sep,25.51258347,Mlele
+2018,Sep,24.56824088,Mpanda Rural
+2018,Sep,26.19935568,Mpanda Urban
+2018,Sep,26.02388288,Administrative unit not available
+2018,Oct,26.07759231,Mlele
+2018,Oct,23.75125167,Mpanda Rural
+2018,Oct,26.03176876,Mpanda Urban
+2018,Oct,26.24018365,Administrative unit not available
+2018,Nov,24.66450249,Mlele
+2018,Nov,22.35725035,Mpanda Rural
+2018,Nov,24.56624443,Mpanda Urban
+2018,Nov,25.7416408,Administrative unit not available
+2018,Dec,22.50017872,Mlele
+2018,Dec,20.97712321,Mpanda Rural
+2018,Dec,22.58111483,Mpanda Urban
+2018,Dec,24.49588723,Administrative unit not available
+2019,Jan,22.78500663,Mlele
+2019,Jan,21.34987589,Mpanda Rural
+2019,Jan,22.76928094,Mpanda Urban
+2019,Jan,24.88251106,Administrative unit not available
+2019,Feb,23.20001257,Mlele
+2019,Feb,21.88806052,Mpanda Rural
+2019,Feb,23.33390629,Mpanda Urban
+2019,Feb,25.55544503,Administrative unit not available
+2019,Mar,23.86317087,Mlele
+2019,Mar,22.14486123,Mpanda Rural
+2019,Mar,23.66350503,Mpanda Urban
+2019,Mar,25.93795622,Administrative unit not available
+2019,Apr,22.85112271,Mlele
+2019,Apr,21.73974748,Mpanda Rural
+2019,Apr,23.14865628,Mpanda Urban
+2019,Apr,25.43952234,Administrative unit not available
+2019,May,22.89997267,Mlele
+2019,May,21.59236131,Mpanda Rural
+2019,May,22.95968999,Mpanda Urban
+2019,May,25.11736911,Administrative unit not available
+2019,Jun,22.37764066,Mlele
+2019,Jun,21.20411326,Mpanda Rural
+2019,Jun,22.44138893,Mpanda Urban
+2019,Jun,23.62165113,Administrative unit not available
+2019,Jul,22.56606555,Mlele
+2019,Jul,21.72070205,Mpanda Rural
+2019,Jul,23.04474406,Mpanda Urban
+2019,Jul,23.70962886,Administrative unit not available
+2019,Aug,23.90133366,Mlele
+2019,Aug,23.01440827,Mpanda Rural
+2019,Aug,24.48434588,Mpanda Urban
+2019,Aug,24.51881061,Administrative unit not available
+2019,Sep,25.52742401,Mlele
+2019,Sep,24.29428061,Mpanda Rural
+2019,Sep,26.11870276,Mpanda Urban
+2019,Sep,25.91108685,Administrative unit not available
+2019,Oct,24.86390334,Mlele
+2019,Oct,22.54367476,Mpanda Rural
+2019,Oct,24.81089724,Mpanda Urban
+2019,Oct,25.56823547,Administrative unit not available
+2019,Nov,24.47162606,Mlele
+2019,Nov,22.18698621,Mpanda Rural
+2019,Nov,24.41981953,Mpanda Urban
+2019,Nov,25.60760352,Administrative unit not available
+2019,Dec,21.82239215,Mlele
+2019,Dec,20.67669746,Mpanda Rural
+2019,Dec,22.12793861,Mpanda Urban
+2019,Dec,24.054973,Administrative unit not available
+2020,Jan,22.46171543,Mlele
+2020,Jan,21.40473926,Mpanda Rural
+2020,Jan,22.63731101,Mpanda Urban
+2020,Jan,24.88934201,Administrative unit not available
+2020,Feb,22.51948164,Mlele
+2020,Feb,21.57084568,Mpanda Rural
+2020,Feb,22.712129,Mpanda Urban
+2020,Feb,24.89280068,Administrative unit not available
+2020,Mar,22.18215363,Mlele
+2020,Mar,21.4236419,Mpanda Rural
+2020,Mar,22.47286795,Mpanda Urban
+2020,Mar,24.77964301,Administrative unit not available
+2020,Apr,21.7821669,Mlele
+2020,Apr,21.0769893,Mpanda Rural
+2020,Apr,22.11186612,Mpanda Urban
+2020,Apr,24.66411622,Administrative unit not available
+2020,May,22.08208005,Mlele
+2020,May,21.57105263,Mpanda Rural
+2020,May,22.66063968,Mpanda Urban
+2020,May,25.00816237,Administrative unit not available
+2020,Jun,21.76680042,Mlele
+2020,Jun,21.46122358,Mpanda Rural
+2020,Jun,22.34602774,Mpanda Urban
+2020,Jun,23.9301827,Administrative unit not available
+2020,Jul,21.20071761,Mlele
+2020,Jul,21.06130055,Mpanda Rural
+2020,Jul,21.71728824,Mpanda Urban
+2020,Jul,22.80017202,Administrative unit not available
+2020,Aug,23.31828714,Mlele
+2020,Aug,23.02395554,Mpanda Rural
+2020,Aug,24.10417166,Mpanda Urban
+2020,Aug,24.22283866,Administrative unit not available
+2020,Sep,24.67427091,Mlele
+2020,Sep,23.79442819,Mpanda Rural
+2020,Sep,25.33613746,Mpanda Urban
+2020,Sep,25.62287429,Administrative unit not available
+2020,Oct,25.91789912,Mlele
+2020,Oct,23.81263407,Mpanda Rural
+2020,Oct,26.32357511,Mpanda Urban
+2020,Oct,26.69422042,Administrative unit not available
+2020,Nov,24.00711354,Mlele
+2020,Nov,22.27353665,Mpanda Rural
+2020,Nov,24.29472493,Mpanda Urban
+2020,Nov,25.47006379,Administrative unit not available
+2020,Dec,21.84646436,Mlele
+2020,Dec,20.68327666,Mpanda Rural
+2020,Dec,22.08442256,Mpanda Urban
+2020,Dec,24.26109452,Administrative unit not available
+2021,Jan,21.55852072,Mlele
+2021,Jan,20.44264579,Mpanda Rural
+2021,Jan,21.70553342,Mpanda Urban
+2021,Jan,24.06257054,Administrative unit not available
+2021,Feb,22.13096158,Mlele
+2021,Feb,21.13612862,Mpanda Rural
+2021,Feb,22.22828676,Mpanda Urban
+2021,Feb,24.88441933,Administrative unit not available
+2021,Mar,22.39319729,Mlele
+2021,Mar,21.4254347,Mpanda Rural
+2021,Mar,22.70246048,Mpanda Urban
+2021,Mar,25.22509726,Administrative unit not available
+2021,Apr,21.6458611,Mlele
+2021,Apr,20.72984215,Mpanda Rural
+2021,Apr,21.9394783,Mpanda Urban
+2021,Apr,24.30563145,Administrative unit not available
+2021,May,22.04383605,Mlele
+2021,May,20.99353949,Mpanda Rural
+2021,May,22.44199886,Mpanda Urban
+2021,May,24.42657609,Administrative unit not available
+2021,Jun,21.57618466,Mlele
+2021,Jun,21.08020311,Mpanda Rural
+2021,Jun,22.2721245,Mpanda Urban
+2021,Jun,23.57749216,Administrative unit not available
+2021,Jul,20.62611444,Mlele
+2021,Jul,20.36591013,Mpanda Rural
+2021,Jul,21.35510887,Mpanda Urban
+2021,Jul,22.60903733,Administrative unit not available
+2021,Aug,23.13683112,Mlele
+2021,Aug,22.55545394,Mpanda Rural
+2021,Aug,23.88952497,Mpanda Urban
+2021,Aug,24.07946634,Administrative unit not available
+2021,Sep,24.93166429,Mlele
+2021,Sep,23.61665673,Mpanda Rural
+2021,Sep,25.70086421,Mpanda Urban
+2021,Sep,25.69012723,Administrative unit not available
+2021,Oct,26.20025524,Mlele
+2021,Oct,23.61238021,Mpanda Rural
+2021,Oct,26.06399416,Mpanda Urban
+2021,Oct,26.74233451,Administrative unit not available
+2021,Nov,24.97280467,Mlele
+2021,Nov,22.49130352,Mpanda Rural
+2021,Nov,24.68321986,Mpanda Urban
+2021,Nov,26.26937365,Administrative unit not available
+2021,Dec,24.31935498,Mlele
+2021,Dec,21.83540197,Mpanda Rural
+2021,Dec,23.8782973,Mpanda Urban
+2021,Dec,25.69191615,Administrative unit not available
+2022,Jan,22.36357515,Mlele
+2022,Jan,20.84277543,Mpanda Rural
+2022,Jan,22.25372626,Mpanda Urban
+2022,Jan,24.49458111,Administrative unit not available
+2022,Feb,21.59057347,Mlele
+2022,Feb,20.57200323,Mpanda Rural
+2022,Feb,21.6588109,Mpanda Urban
+2022,Feb,24.15747237,Administrative unit not available
+2022,Mar,22.83364295,Mlele
+2022,Mar,21.64802273,Mpanda Rural
+2022,Mar,23.01808573,Mpanda Urban
+2022,Mar,25.15315669,Administrative unit not available
+2022,Apr,23.09674533,Mlele
+2022,Apr,21.65400397,Mpanda Rural
+2022,Apr,23.18142078,Mpanda Urban
+2022,Apr,25.30792705,Administrative unit not available
+2022,May,22.64478711,Mlele
+2022,May,21.55493446,Mpanda Rural
+2022,May,22.94852453,Mpanda Urban
+2022,May,25.04927111,Administrative unit not available
+2022,Jun,21.36547758,Mlele
+2022,Jun,20.5413819,Mpanda Rural
+2022,Jun,21.60532628,Mpanda Urban
+2022,Jun,23.07897058,Administrative unit not available
+2022,Jul,21.37773065,Mlele
+2022,Jul,20.7945934,Mpanda Rural
+2022,Jul,21.83180667,Mpanda Urban
+2022,Jul,22.79738785,Administrative unit not available
+2022,Aug,23.1407675,Mlele
+2022,Aug,22.34931218,Mpanda Rural
+2022,Aug,23.75078834,Mpanda Urban
+2022,Aug,23.99215589,Administrative unit not available
+2022,Sep,24.91480708,Mlele
+2022,Sep,23.79404748,Mpanda Rural
+2022,Sep,25.67024214,Mpanda Urban
+2022,Sep,25.60280882,Administrative unit not available
+2022,Oct,26.61704447,Mlele
+2022,Oct,25.01896458,Mpanda Rural
+2022,Oct,27.13860562,Mpanda Urban
+2022,Oct,26.86095991,Administrative unit not available
+2022,Nov,23.90416344,Mlele
+2022,Nov,21.21294868,Mpanda Rural
+2022,Nov,23.28397829,Mpanda Urban
+2022,Nov,25.17585926,Administrative unit not available
+2022,Dec,22.08980929,Mlele
+2022,Dec,20.37150026,Mpanda Rural
+2022,Dec,21.95164286,Mpanda Urban
+2022,Dec,24.15803536,Administrative unit not available
+2023,Jan,21.89212143,Mlele
+2023,Jan,20.7314418,Mpanda Rural
+2023,Jan,22.05379831,Mpanda Urban
+2023,Jan,24.53811881,Administrative unit not available
+2023,Feb,22.93259482,Mlele
+2023,Feb,21.42117462,Mpanda Rural
+2023,Feb,22.86767614,Mpanda Urban
+2023,Feb,25.40136449,Administrative unit not available
+2023,Mar,22.03766303,Mlele
+2023,Mar,20.80677426,Mpanda Rural
+2023,Mar,22.14198544,Mpanda Urban
+2023,Mar,24.66964243,Administrative unit not available
+2023,Apr,21.97456642,Mlele
+2023,Apr,21.0150782,Mpanda Rural
+2023,Apr,22.23865913,Mpanda Urban
+2023,Apr,24.68325123,Administrative unit not available

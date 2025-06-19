@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Agro-Research TZ</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .contact-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        form {
+            text-align: left;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            margin-top: 10px;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Agro-Research TZ</h2>
+        <div class="contact-info">
+            <p><strong>Address:</strong> 123 Agro Street, Dar es Salaam, Tanzania</p>
+            <p><strong>Email:</strong> <a href="mailto:info@agroresearch.co.tz">info@agroresearch.co.tz</a></p>
+            <p><strong>Phone:</strong> +255 769 597 936</p>
+            <p><strong>Phone:</strong> +255 617 757 762</p>
+        </div>
+        <h3>Send us a Message</h3>
+        <form>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</body>
+</html>
+{% endblock content %}

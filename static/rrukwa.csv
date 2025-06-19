@@ -1,0 +1,801 @@
+year,month,temp,ADM2_NAME
+2010,Jan,19.35022624,Kalambo
+2010,Jan,21.06948859,Sumbawanga Rural
+2010,Jan,20.93229577,Nkasi
+2010,Jan,18.22467479,Sumbawanga Urban
+2010,Jan,24.62828059,Administrative unit not available
+2010,Feb,19.73714712,Kalambo
+2010,Feb,21.51408095,Sumbawanga Rural
+2010,Feb,21.39659881,Nkasi
+2010,Feb,18.69439791,Sumbawanga Urban
+2010,Feb,25.21425976,Administrative unit not available
+2010,Mar,19.45085375,Kalambo
+2010,Mar,21.3421106,Sumbawanga Rural
+2010,Mar,21.00476244,Nkasi
+2010,Mar,18.4581693,Sumbawanga Urban
+2010,Mar,24.84946235,Administrative unit not available
+2010,Apr,19.92250913,Kalambo
+2010,Apr,21.922586,Sumbawanga Rural
+2010,Apr,21.65162675,Nkasi
+2010,Apr,18.7327806,Sumbawanga Urban
+2010,Apr,25.71017798,Administrative unit not available
+2010,May,19.5756343,Kalambo
+2010,May,21.66725123,Sumbawanga Rural
+2010,May,21.60613696,Nkasi
+2010,May,18.41423157,Sumbawanga Urban
+2010,May,25.51966529,Administrative unit not available
+2010,Jun,18.15717933,Kalambo
+2010,Jun,19.8932895,Sumbawanga Rural
+2010,Jun,20.61203475,Nkasi
+2010,Jun,17.00591124,Sumbawanga Urban
+2010,Jun,23.94368626,Administrative unit not available
+2010,Jul,17.85035728,Kalambo
+2010,Jul,19.21621859,Sumbawanga Rural
+2010,Jul,20.38570769,Nkasi
+2010,Jul,16.56528075,Sumbawanga Urban
+2010,Jul,23.19066356,Administrative unit not available
+2010,Aug,18.84570311,Kalambo
+2010,Aug,20.053685,Sumbawanga Rural
+2010,Aug,21.25685889,Nkasi
+2010,Aug,17.38928805,Sumbawanga Urban
+2010,Aug,23.76918785,Administrative unit not available
+2010,Sep,21.43952254,Kalambo
+2010,Sep,22.39743697,Sumbawanga Rural
+2010,Sep,23.52795098,Nkasi
+2010,Sep,19.60736557,Sumbawanga Urban
+2010,Sep,25.90672376,Administrative unit not available
+2010,Oct,23.20691078,Kalambo
+2010,Oct,24.42207527,Sumbawanga Rural
+2010,Oct,24.47630072,Nkasi
+2010,Oct,21.29456564,Sumbawanga Urban
+2010,Oct,27.17231738,Administrative unit not available
+2010,Nov,21.88847327,Kalambo
+2010,Nov,24.1378055,Sumbawanga Rural
+2010,Nov,22.82984479,Nkasi
+2010,Nov,20.52242465,Sumbawanga Urban
+2010,Nov,26.23776298,Administrative unit not available
+2010,Dec,19.2316341,Kalambo
+2010,Dec,21.25823734,Sumbawanga Rural
+2010,Dec,20.63503395,Nkasi
+2010,Dec,18.00958597,Sumbawanga Urban
+2010,Dec,24.39921941,Administrative unit not available
+2011,Jan,19.00397924,Kalambo
+2011,Jan,20.8704961,Sumbawanga Rural
+2011,Jan,20.47154594,Nkasi
+2011,Jan,17.75963113,Sumbawanga Urban
+2011,Jan,24.33157572,Administrative unit not available
+2011,Feb,18.789317,Kalambo
+2011,Feb,20.94699696,Sumbawanga Rural
+2011,Feb,20.63314463,Nkasi
+2011,Feb,17.85074728,Sumbawanga Urban
+2011,Feb,24.59097589,Administrative unit not available
+2011,Mar,18.7898034,Kalambo
+2011,Mar,20.83828547,Sumbawanga Rural
+2011,Mar,20.47114503,Nkasi
+2011,Mar,17.76160859,Sumbawanga Urban
+2011,Mar,24.40029637,Administrative unit not available
+2011,Apr,18.96397255,Kalambo
+2011,Apr,20.72902758,Sumbawanga Rural
+2011,Apr,20.61847317,Nkasi
+2011,Apr,17.86315108,Sumbawanga Urban
+2011,Apr,24.58468244,Administrative unit not available
+2011,May,19.11696633,Kalambo
+2011,May,21.1598891,Sumbawanga Rural
+2011,May,21.18748246,Nkasi
+2011,May,17.97926726,Sumbawanga Urban
+2011,May,25.27726753,Administrative unit not available
+2011,Jun,18.63623061,Kalambo
+2011,Jun,20.11482414,Sumbawanga Rural
+2011,Jun,20.80581037,Nkasi
+2011,Jun,17.2076922,Sumbawanga Urban
+2011,Jun,24.59410443,Administrative unit not available
+2011,Jul,17.97356948,Kalambo
+2011,Jul,19.23275132,Sumbawanga Rural
+2011,Jul,20.29955286,Nkasi
+2011,Jul,16.64667204,Sumbawanga Urban
+2011,Jul,23.39519091,Administrative unit not available
+2011,Aug,19.41038656,Kalambo
+2011,Aug,20.48260075,Sumbawanga Rural
+2011,Aug,21.76335841,Nkasi
+2011,Aug,17.8528693,Sumbawanga Urban
+2011,Aug,24.3255766,Administrative unit not available
+2011,Sep,21.29398977,Kalambo
+2011,Sep,22.37392002,Sumbawanga Rural
+2011,Sep,23.25721176,Nkasi
+2011,Sep,19.53243851,Sumbawanga Urban
+2011,Sep,25.94847961,Administrative unit not available
+2011,Oct,21.14495796,Kalambo
+2011,Oct,23.67891951,Sumbawanga Rural
+2011,Oct,22.5773719,Nkasi
+2011,Oct,20.13868478,Sumbawanga Urban
+2011,Oct,25.89338849,Administrative unit not available
+2011,Nov,20.063632,Kalambo
+2011,Nov,22.33108114,Sumbawanga Rural
+2011,Nov,21.13096951,Nkasi
+2011,Nov,18.92683326,Sumbawanga Urban
+2011,Nov,24.64326479,Administrative unit not available
+2011,Dec,18.93109315,Kalambo
+2011,Dec,20.82951667,Sumbawanga Rural
+2011,Dec,20.33173662,Nkasi
+2011,Dec,17.73036663,Sumbawanga Urban
+2011,Dec,24.04187567,Administrative unit not available
+2012,Jan,18.94188279,Kalambo
+2012,Jan,20.87068647,Sumbawanga Rural
+2012,Jan,20.65982571,Nkasi
+2012,Jan,17.87995735,Sumbawanga Urban
+2012,Jan,24.48799943,Administrative unit not available
+2012,Feb,18.85596926,Kalambo
+2012,Feb,21.07892681,Sumbawanga Rural
+2012,Feb,20.5790777,Nkasi
+2012,Feb,17.86876992,Sumbawanga Urban
+2012,Feb,24.7238597,Administrative unit not available
+2012,Mar,19.08935314,Kalambo
+2012,Mar,21.10139887,Sumbawanga Rural
+2012,Mar,20.81382146,Nkasi
+2012,Mar,17.96924705,Sumbawanga Urban
+2012,Mar,25.03624785,Administrative unit not available
+2012,Apr,18.39901472,Kalambo
+2012,Apr,20.63513544,Sumbawanga Rural
+2012,Apr,20.38529586,Nkasi
+2012,Apr,17.43377152,Sumbawanga Urban
+2012,Apr,24.49266555,Administrative unit not available
+2012,May,18.55028131,Kalambo
+2012,May,20.73997776,Sumbawanga Rural
+2012,May,20.53223198,Nkasi
+2012,May,17.4248787,Sumbawanga Urban
+2012,May,24.54290445,Administrative unit not available
+2012,Jun,17.81094218,Kalambo
+2012,Jun,19.56161021,Sumbawanga Rural
+2012,Jun,19.91385103,Nkasi
+2012,Jun,16.56522258,Sumbawanga Urban
+2012,Jun,23.56283568,Administrative unit not available
+2012,Jul,17.79089112,Kalambo
+2012,Jul,19.21260155,Sumbawanga Rural
+2012,Jul,20.11450311,Nkasi
+2012,Jul,16.40472257,Sumbawanga Urban
+2012,Jul,23.39211061,Administrative unit not available
+2012,Aug,19.78061517,Kalambo
+2012,Aug,20.97781973,Sumbawanga Rural
+2012,Aug,21.62137367,Nkasi
+2012,Aug,18.02418718,Sumbawanga Urban
+2012,Aug,24.59441563,Administrative unit not available
+2012,Sep,21.86646233,Kalambo
+2012,Sep,22.95331115,Sumbawanga Rural
+2012,Sep,23.55804849,Nkasi
+2012,Sep,19.98627801,Sumbawanga Urban
+2012,Sep,26.3397528,Administrative unit not available
+2012,Oct,22.71170512,Kalambo
+2012,Oct,24.34861677,Sumbawanga Rural
+2012,Oct,23.85216202,Nkasi
+2012,Oct,21.1014389,Sumbawanga Urban
+2012,Oct,26.92324991,Administrative unit not available
+2012,Nov,20.0666308,Kalambo
+2012,Nov,22.4900957,Sumbawanga Rural
+2012,Nov,21.19753617,Nkasi
+2012,Nov,18.81943453,Sumbawanga Urban
+2012,Nov,24.98082884,Administrative unit not available
+2012,Dec,19.35610624,Kalambo
+2012,Dec,21.48973681,Sumbawanga Rural
+2012,Dec,20.63456491,Nkasi
+2012,Dec,18.12813943,Sumbawanga Urban
+2012,Dec,24.17513218,Administrative unit not available
+2013,Jan,19.20378667,Kalambo
+2013,Jan,21.0632183,Sumbawanga Rural
+2013,Jan,20.93119935,Nkasi
+2013,Jan,18.16431741,Sumbawanga Urban
+2013,Jan,24.58056717,Administrative unit not available
+2013,Feb,19.37875342,Kalambo
+2013,Feb,21.28641152,Sumbawanga Rural
+2013,Feb,21.16448436,Nkasi
+2013,Feb,18.31856079,Sumbawanga Urban
+2013,Feb,25.03342197,Administrative unit not available
+2013,Mar,19.37480881,Kalambo
+2013,Mar,21.21881198,Sumbawanga Rural
+2013,Mar,20.825038,Nkasi
+2013,Mar,18.27294147,Sumbawanga Urban
+2013,Mar,24.69068252,Administrative unit not available
+2013,Apr,18.63721659,Kalambo
+2013,Apr,20.56463287,Sumbawanga Rural
+2013,Apr,20.31080947,Nkasi
+2013,Apr,17.58695195,Sumbawanga Urban
+2013,Apr,24.46393858,Administrative unit not available
+2013,May,18.82500148,Kalambo
+2013,May,20.80381238,Sumbawanga Rural
+2013,May,20.87844584,Nkasi
+2013,May,17.56032983,Sumbawanga Urban
+2013,May,24.90939608,Administrative unit not available
+2013,Jun,17.70725779,Kalambo
+2013,Jun,19.16714275,Sumbawanga Rural
+2013,Jun,19.78283862,Nkasi
+2013,Jun,16.27562026,Sumbawanga Urban
+2013,Jun,23.50904457,Administrative unit not available
+2013,Jul,17.86879661,Kalambo
+2013,Jul,19.10683664,Sumbawanga Rural
+2013,Jul,19.97703102,Nkasi
+2013,Jul,16.2745923,Sumbawanga Urban
+2013,Jul,23.20380135,Administrative unit not available
+2013,Aug,19.4347202,Kalambo
+2013,Aug,20.56602437,Sumbawanga Rural
+2013,Aug,21.57640571,Nkasi
+2013,Aug,17.79859124,Sumbawanga Urban
+2013,Aug,24.317113,Administrative unit not available
+2013,Sep,22.00403349,Kalambo
+2013,Sep,23.01550744,Sumbawanga Rural
+2013,Sep,23.48052257,Nkasi
+2013,Sep,20.10520876,Sumbawanga Urban
+2013,Sep,26.15871583,Administrative unit not available
+2013,Oct,22.36258772,Kalambo
+2013,Oct,24.04955554,Sumbawanga Rural
+2013,Oct,23.3761715,Nkasi
+2013,Oct,20.77549873,Sumbawanga Urban
+2013,Oct,26.64935719,Administrative unit not available
+2013,Nov,21.59191502,Kalambo
+2013,Nov,23.84136688,Sumbawanga Rural
+2013,Nov,22.06482273,Nkasi
+2013,Nov,20.29067673,Sumbawanga Urban
+2013,Nov,25.58350696,Administrative unit not available
+2013,Dec,19.21502604,Kalambo
+2013,Dec,21.06309996,Sumbawanga Rural
+2013,Dec,20.44196663,Nkasi
+2013,Dec,17.92038415,Sumbawanga Urban
+2013,Dec,24.04129701,Administrative unit not available
+2014,Jan,18.97236273,Kalambo
+2014,Jan,20.75076952,Sumbawanga Rural
+2014,Jan,20.67566776,Nkasi
+2014,Jan,17.81307122,Sumbawanga Urban
+2014,Jan,24.4796237,Administrative unit not available
+2014,Feb,18.79092649,Kalambo
+2014,Feb,20.75853869,Sumbawanga Rural
+2014,Feb,20.68978404,Nkasi
+2014,Feb,17.7538393,Sumbawanga Urban
+2014,Feb,24.51228413,Administrative unit not available
+2014,Mar,19.09318326,Kalambo
+2014,Mar,21.01395022,Sumbawanga Rural
+2014,Mar,20.708523,Nkasi
+2014,Mar,17.99450195,Sumbawanga Urban
+2014,Mar,24.57705564,Administrative unit not available
+2014,Apr,18.73281251,Kalambo
+2014,Apr,20.52647433,Sumbawanga Rural
+2014,Apr,20.35632283,Nkasi
+2014,Apr,17.63982538,Sumbawanga Urban
+2014,Apr,24.36926423,Administrative unit not available
+2014,May,19.16506389,Kalambo
+2014,May,20.93027476,Sumbawanga Rural
+2014,May,21.26018214,Nkasi
+2014,May,18.01495912,Sumbawanga Urban
+2014,May,25.11804262,Administrative unit not available
+2014,Jun,18.26915751,Kalambo
+2014,Jun,19.75589042,Sumbawanga Rural
+2014,Jun,20.66434323,Nkasi
+2014,Jun,17.01969467,Sumbawanga Urban
+2014,Jun,24.06115739,Administrative unit not available
+2014,Jul,18.17470621,Kalambo
+2014,Jul,19.42295248,Sumbawanga Rural
+2014,Jul,20.48321013,Nkasi
+2014,Jul,16.79746686,Sumbawanga Urban
+2014,Jul,23.46539629,Administrative unit not available
+2014,Aug,20.2230921,Kalambo
+2014,Aug,21.26040841,Sumbawanga Rural
+2014,Aug,22.21179339,Nkasi
+2014,Aug,18.48664243,Sumbawanga Urban
+2014,Aug,24.9718464,Administrative unit not available
+2014,Sep,21.34902383,Kalambo
+2014,Sep,22.4730688,Sumbawanga Rural
+2014,Sep,23.11911046,Nkasi
+2014,Sep,19.5108838,Sumbawanga Urban
+2014,Sep,25.8495211,Administrative unit not available
+2014,Oct,21.71655729,Kalambo
+2014,Oct,23.38879046,Sumbawanga Rural
+2014,Oct,23.06190061,Nkasi
+2014,Oct,20.07892232,Sumbawanga Urban
+2014,Oct,26.4150886,Administrative unit not available
+2014,Nov,21.57020908,Kalambo
+2014,Nov,23.76423502,Sumbawanga Rural
+2014,Nov,22.67382352,Nkasi
+2014,Nov,20.13834139,Sumbawanga Urban
+2014,Nov,26.21166852,Administrative unit not available
+2014,Dec,19.51471075,Kalambo
+2014,Dec,21.63162089,Sumbawanga Rural
+2014,Dec,21.0047557,Nkasi
+2014,Dec,18.2366381,Sumbawanga Urban
+2014,Dec,24.74523067,Administrative unit not available
+2015,Jan,18.81408807,Kalambo
+2015,Jan,20.73419026,Sumbawanga Rural
+2015,Jan,20.64575042,Nkasi
+2015,Jan,17.74741248,Sumbawanga Urban
+2015,Jan,24.36625236,Administrative unit not available
+2015,Feb,19.5748344,Kalambo
+2015,Feb,21.36951207,Sumbawanga Rural
+2015,Feb,21.32268369,Nkasi
+2015,Feb,18.38889891,Sumbawanga Urban
+2015,Feb,25.28068077,Administrative unit not available
+2015,Mar,19.32743806,Kalambo
+2015,Mar,21.31089081,Sumbawanga Rural
+2015,Mar,21.26289915,Nkasi
+2015,Mar,18.29051043,Sumbawanga Urban
+2015,Mar,25.24181057,Administrative unit not available
+2015,Apr,18.64547513,Kalambo
+2015,Apr,20.59611036,Sumbawanga Rural
+2015,Apr,20.18467646,Nkasi
+2015,Apr,17.49146221,Sumbawanga Urban
+2015,Apr,24.29493931,Administrative unit not available
+2015,May,18.9853675,Kalambo
+2015,May,20.98292812,Sumbawanga Rural
+2015,May,20.78041115,Nkasi
+2015,May,17.58028308,Sumbawanga Urban
+2015,May,25.032799,Administrative unit not available
+2015,Jun,18.45354637,Kalambo
+2015,Jun,20.07018409,Sumbawanga Rural
+2015,Jun,20.51685789,Nkasi
+2015,Jun,17.0059773,Sumbawanga Urban
+2015,Jun,24.31563541,Administrative unit not available
+2015,Jul,18.80471795,Kalambo
+2015,Jul,19.95064096,Sumbawanga Rural
+2015,Jul,20.66266501,Nkasi
+2015,Jul,17.09040267,Sumbawanga Urban
+2015,Jul,24.05876223,Administrative unit not available
+2015,Aug,19.91698618,Kalambo
+2015,Aug,20.88694434,Sumbawanga Rural
+2015,Aug,21.99209047,Nkasi
+2015,Aug,18.03864154,Sumbawanga Urban
+2015,Aug,24.83737922,Administrative unit not available
+2015,Sep,22.15413987,Kalambo
+2015,Sep,23.20757388,Sumbawanga Rural
+2015,Sep,24.10757926,Nkasi
+2015,Sep,20.20637942,Sumbawanga Urban
+2015,Sep,26.73002998,Administrative unit not available
+2015,Oct,22.32095094,Kalambo
+2015,Oct,24.31852094,Sumbawanga Rural
+2015,Oct,23.39459174,Nkasi
+2015,Oct,20.69250022,Sumbawanga Urban
+2015,Oct,26.77726838,Administrative unit not available
+2015,Nov,19.64569655,Kalambo
+2015,Nov,21.8805825,Sumbawanga Rural
+2015,Nov,21.1648077,Nkasi
+2015,Nov,18.59847144,Sumbawanga Urban
+2015,Nov,24.73817745,Administrative unit not available
+2015,Dec,19.25800668,Kalambo
+2015,Dec,21.34281031,Sumbawanga Rural
+2015,Dec,20.73116132,Nkasi
+2015,Dec,18.13798724,Sumbawanga Urban
+2015,Dec,24.37873685,Administrative unit not available
+2016,Jan,19.22153866,Kalambo
+2016,Jan,20.90452215,Sumbawanga Rural
+2016,Jan,20.95618809,Nkasi
+2016,Jan,18.10933033,Sumbawanga Urban
+2016,Jan,24.5327593,Administrative unit not available
+2016,Feb,19.97599997,Kalambo
+2016,Feb,21.68357003,Sumbawanga Rural
+2016,Feb,21.68405166,Nkasi
+2016,Feb,18.86065259,Sumbawanga Urban
+2016,Feb,25.42767793,Administrative unit not available
+2016,Mar,20.66373105,Kalambo
+2016,Mar,22.79572658,Sumbawanga Rural
+2016,Mar,22.32681654,Nkasi
+2016,Mar,19.58032524,Sumbawanga Urban
+2016,Mar,26.36302069,Administrative unit not available
+2016,Apr,19.37266052,Kalambo
+2016,Apr,21.2892401,Sumbawanga Rural
+2016,Apr,21.00734089,Nkasi
+2016,Apr,18.32286664,Sumbawanga Urban
+2016,Apr,24.9638143,Administrative unit not available
+2016,May,18.17458372,Kalambo
+2016,May,20.16414578,Sumbawanga Rural
+2016,May,20.29134425,Nkasi
+2016,May,16.98293076,Sumbawanga Urban
+2016,May,24.37894607,Administrative unit not available
+2016,Jun,17.63355181,Kalambo
+2016,Jun,19.22362544,Sumbawanga Rural
+2016,Jun,19.89566737,Nkasi
+2016,Jun,16.2831471,Sumbawanga Urban
+2016,Jun,23.46607386,Administrative unit not available
+2016,Jul,17.64588044,Kalambo
+2016,Jul,18.92107852,Sumbawanga Rural
+2016,Jul,19.92860746,Nkasi
+2016,Jul,16.18789153,Sumbawanga Urban
+2016,Jul,22.9690912,Administrative unit not available
+2016,Aug,19.61458107,Kalambo
+2016,Aug,20.58774238,Sumbawanga Rural
+2016,Aug,21.81129834,Nkasi
+2016,Aug,17.7321008,Sumbawanga Urban
+2016,Aug,24.55276562,Administrative unit not available
+2016,Sep,21.62500669,Kalambo
+2016,Sep,22.3360106,Sumbawanga Rural
+2016,Sep,23.53386206,Nkasi
+2016,Sep,19.49997147,Sumbawanga Urban
+2016,Sep,26.0766747,Administrative unit not available
+2016,Oct,23.09201044,Kalambo
+2016,Oct,24.24477873,Sumbawanga Rural
+2016,Oct,24.34476128,Nkasi
+2016,Oct,21.1029396,Sumbawanga Urban
+2016,Oct,27.30883678,Administrative unit not available
+2016,Nov,21.75210383,Kalambo
+2016,Nov,24.23289223,Sumbawanga Rural
+2016,Nov,22.84419076,Nkasi
+2016,Nov,20.65288374,Sumbawanga Urban
+2016,Nov,26.26322499,Administrative unit not available
+2016,Dec,19.72614635,Kalambo
+2016,Dec,22.04041169,Sumbawanga Rural
+2016,Dec,21.20144474,Nkasi
+2016,Dec,18.56578835,Sumbawanga Urban
+2016,Dec,24.92866553,Administrative unit not available
+2017,Jan,19.4793647,Kalambo
+2017,Jan,21.57469425,Sumbawanga Rural
+2017,Jan,21.24696409,Nkasi
+2017,Jan,18.23908071,Sumbawanga Urban
+2017,Jan,25.20932278,Administrative unit not available
+2017,Feb,19.17604174,Kalambo
+2017,Feb,21.18496583,Sumbawanga Rural
+2017,Feb,20.95098877,Nkasi
+2017,Feb,18.11503018,Sumbawanga Urban
+2017,Feb,24.9284639,Administrative unit not available
+2017,Mar,19.19865137,Kalambo
+2017,Mar,21.15273584,Sumbawanga Rural
+2017,Mar,20.87886637,Nkasi
+2017,Mar,18.20163486,Sumbawanga Urban
+2017,Mar,24.81809212,Administrative unit not available
+2017,Apr,19.11100272,Kalambo
+2017,Apr,21.19959805,Sumbawanga Rural
+2017,Apr,21.0062989,Nkasi
+2017,Apr,18.14758226,Sumbawanga Urban
+2017,Apr,24.92863686,Administrative unit not available
+2017,May,18.84990891,Kalambo
+2017,May,21.02532738,Sumbawanga Rural
+2017,May,21.19661003,Nkasi
+2017,May,17.87654362,Sumbawanga Urban
+2017,May,25.04548306,Administrative unit not available
+2017,Jun,18.47403887,Kalambo
+2017,Jun,20.21254891,Sumbawanga Rural
+2017,Jun,20.90711808,Nkasi
+2017,Jun,17.36239497,Sumbawanga Urban
+2017,Jun,24.25034317,Administrative unit not available
+2017,Jul,18.32392769,Kalambo
+2017,Jul,19.73445067,Sumbawanga Rural
+2017,Jul,20.75732795,Nkasi
+2017,Jul,17.04283885,Sumbawanga Urban
+2017,Jul,23.70354861,Administrative unit not available
+2017,Aug,19.87616644,Kalambo
+2017,Aug,21.16904163,Sumbawanga Rural
+2017,Aug,22.10406478,Nkasi
+2017,Aug,18.36528165,Sumbawanga Urban
+2017,Aug,24.76214598,Administrative unit not available
+2017,Sep,21.55381682,Kalambo
+2017,Sep,22.62955713,Sumbawanga Rural
+2017,Sep,23.56466788,Nkasi
+2017,Sep,19.68927721,Sumbawanga Urban
+2017,Sep,26.24281107,Administrative unit not available
+2017,Oct,22.10878276,Kalambo
+2017,Oct,24.10789057,Sumbawanga Rural
+2017,Oct,23.36674493,Nkasi
+2017,Oct,20.59211902,Sumbawanga Urban
+2017,Oct,26.70251999,Administrative unit not available
+2017,Nov,20.03884813,Kalambo
+2017,Nov,22.13002956,Sumbawanga Rural
+2017,Nov,21.24039758,Nkasi
+2017,Nov,18.71660291,Sumbawanga Urban
+2017,Nov,24.87050064,Administrative unit not available
+2017,Dec,19.21300399,Kalambo
+2017,Dec,21.30687312,Sumbawanga Rural
+2017,Dec,20.67750814,Nkasi
+2017,Dec,18.14304687,Sumbawanga Urban
+2017,Dec,24.50634956,Administrative unit not available
+2018,Jan,18.08028783,Kalambo
+2018,Jan,19.97036669,Sumbawanga Rural
+2018,Jan,19.87985725,Nkasi
+2018,Jan,17.08433302,Sumbawanga Urban
+2018,Jan,23.60290412,Administrative unit not available
+2018,Feb,19.75494905,Kalambo
+2018,Feb,21.5709147,Sumbawanga Rural
+2018,Feb,21.37466088,Nkasi
+2018,Feb,18.59899389,Sumbawanga Urban
+2018,Feb,25.45020841,Administrative unit not available
+2018,Mar,18.57503151,Kalambo
+2018,Mar,20.4142593,Sumbawanga Rural
+2018,Mar,20.35175065,Nkasi
+2018,Mar,17.50266941,Sumbawanga Urban
+2018,Mar,24.09663581,Administrative unit not available
+2018,Apr,18.33802199,Kalambo
+2018,Apr,20.05075493,Sumbawanga Rural
+2018,Apr,19.83044187,Nkasi
+2018,Apr,17.15398967,Sumbawanga Urban
+2018,Apr,23.77845234,Administrative unit not available
+2018,May,18.53300544,Kalambo
+2018,May,20.45463396,Sumbawanga Rural
+2018,May,20.43531638,Nkasi
+2018,May,17.34143068,Sumbawanga Urban
+2018,May,24.69410113,Administrative unit not available
+2018,Jun,17.91340593,Kalambo
+2018,Jun,19.42159844,Sumbawanga Rural
+2018,Jun,19.91391879,Nkasi
+2018,Jun,16.59736232,Sumbawanga Urban
+2018,Jun,23.66494117,Administrative unit not available
+2018,Jul,17.10076536,Kalambo
+2018,Jul,18.53387564,Sumbawanga Rural
+2018,Jul,19.44910162,Nkasi
+2018,Jul,15.78661734,Sumbawanga Urban
+2018,Jul,22.6056044,Administrative unit not available
+2018,Aug,19.8099131,Kalambo
+2018,Aug,20.66021252,Sumbawanga Rural
+2018,Aug,21.67512148,Nkasi
+2018,Aug,17.88895364,Sumbawanga Urban
+2018,Aug,24.47223531,Administrative unit not available
+2018,Sep,21.86974834,Kalambo
+2018,Sep,22.75478261,Sumbawanga Rural
+2018,Sep,23.76708117,Nkasi
+2018,Sep,19.8283706,Sumbawanga Urban
+2018,Sep,26.47977847,Administrative unit not available
+2018,Oct,21.79625647,Kalambo
+2018,Oct,23.8098371,Sumbawanga Rural
+2018,Oct,23.22734882,Nkasi
+2018,Oct,20.38071573,Sumbawanga Urban
+2018,Oct,26.40566657,Administrative unit not available
+2018,Nov,20.98481666,Kalambo
+2018,Nov,23.31837571,Sumbawanga Rural
+2018,Nov,22.22711571,Nkasi
+2018,Nov,19.77526967,Sumbawanga Urban
+2018,Nov,25.81278299,Administrative unit not available
+2018,Dec,19.19795805,Kalambo
+2018,Dec,21.22425387,Sumbawanga Rural
+2018,Dec,20.71011193,Nkasi
+2018,Dec,18.16986502,Sumbawanga Urban
+2018,Dec,24.38555025,Administrative unit not available
+2019,Jan,19.34153386,Kalambo
+2019,Jan,21.27338061,Sumbawanga Rural
+2019,Jan,21.02270336,Nkasi
+2019,Jan,18.24720142,Sumbawanga Urban
+2019,Jan,24.76194836,Administrative unit not available
+2019,Feb,19.74717297,Kalambo
+2019,Feb,21.64738364,Sumbawanga Rural
+2019,Feb,21.54286419,Nkasi
+2019,Feb,18.70508857,Sumbawanga Urban
+2019,Feb,25.48225155,Administrative unit not available
+2019,Mar,19.78053254,Kalambo
+2019,Mar,22.02148869,Sumbawanga Rural
+2019,Mar,21.67089816,Nkasi
+2019,Mar,18.7933931,Sumbawanga Urban
+2019,Mar,25.85573965,Administrative unit not available
+2019,Apr,19.67848557,Kalambo
+2019,Apr,21.86561926,Sumbawanga Rural
+2019,Apr,21.40946377,Nkasi
+2019,Apr,18.63130351,Sumbawanga Urban
+2019,Apr,25.4903836,Administrative unit not available
+2019,May,19.10580299,Kalambo
+2019,May,21.48000682,Sumbawanga Rural
+2019,May,21.13685113,Nkasi
+2019,May,18.06114821,Sumbawanga Urban
+2019,May,25.19149115,Administrative unit not available
+2019,Jun,17.45807932,Kalambo
+2019,Jun,19.48421296,Sumbawanga Rural
+2019,Jun,19.89699192,Nkasi
+2019,Jun,16.39591192,Sumbawanga Urban
+2019,Jun,23.49642979,Administrative unit not available
+2019,Jul,18.38849256,Kalambo
+2019,Jul,19.81236615,Sumbawanga Rural
+2019,Jul,20.49797514,Nkasi
+2019,Jul,16.94954018,Sumbawanga Urban
+2019,Jul,23.71242727,Administrative unit not available
+2019,Aug,20.13849079,Kalambo
+2019,Aug,21.26230441,Sumbawanga Rural
+2019,Aug,22.08856477,Nkasi
+2019,Aug,18.3592385,Sumbawanga Urban
+2019,Aug,24.80262122,Administrative unit not available
+2019,Sep,21.69681816,Kalambo
+2019,Sep,22.9900545,Sumbawanga Rural
+2019,Sep,23.61092716,Nkasi
+2019,Sep,19.93256655,Sumbawanga Urban
+2019,Sep,26.26641688,Administrative unit not available
+2019,Oct,21.34143687,Kalambo
+2019,Oct,23.5460258,Sumbawanga Rural
+2019,Oct,22.59611133,Nkasi
+2019,Oct,19.96403384,Sumbawanga Urban
+2019,Oct,25.90244211,Administrative unit not available
+2019,Nov,21.27135654,Kalambo
+2019,Nov,23.31644755,Sumbawanga Rural
+2019,Nov,22.28145902,Nkasi
+2019,Nov,19.90389495,Sumbawanga Urban
+2019,Nov,25.73540025,Administrative unit not available
+2019,Dec,18.80166346,Kalambo
+2019,Dec,20.55615433,Sumbawanga Rural
+2019,Dec,20.32196209,Nkasi
+2019,Dec,17.70043471,Sumbawanga Urban
+2019,Dec,23.74542793,Administrative unit not available
+2020,Jan,19.28483694,Kalambo
+2020,Jan,20.99061116,Sumbawanga Rural
+2020,Jan,21.02276589,Nkasi
+2020,Jan,18.23069455,Sumbawanga Urban
+2020,Jan,24.50950363,Administrative unit not available
+2020,Feb,19.42806165,Kalambo
+2020,Feb,21.10112294,Sumbawanga Rural
+2020,Feb,21.02939364,Nkasi
+2020,Feb,18.33456265,Sumbawanga Urban
+2020,Feb,24.67941021,Administrative unit not available
+2020,Mar,19.15202218,Kalambo
+2020,Mar,20.83704574,Sumbawanga Rural
+2020,Mar,20.86971599,Nkasi
+2020,Mar,18.11921014,Sumbawanga Urban
+2020,Mar,24.54554876,Administrative unit not available
+2020,Apr,19.04811111,Kalambo
+2020,Apr,20.7593331,Sumbawanga Rural
+2020,Apr,20.65642928,Nkasi
+2020,Apr,17.95123136,Sumbawanga Urban
+2020,Apr,24.65542034,Administrative unit not available
+2020,May,18.83986111,Kalambo
+2020,May,20.51937613,Sumbawanga Rural
+2020,May,20.72328997,Nkasi
+2020,May,17.47183238,Sumbawanga Urban
+2020,May,24.86169699,Administrative unit not available
+2020,Jun,18.02772147,Kalambo
+2020,Jun,19.4343778,Sumbawanga Rural
+2020,Jun,20.17574095,Nkasi
+2020,Jun,16.56862432,Sumbawanga Urban
+2020,Jun,23.78632305,Administrative unit not available
+2020,Jul,17.0425161,Kalambo
+2020,Jul,18.49665937,Sumbawanga Rural
+2020,Jul,19.54847008,Nkasi
+2020,Jul,15.83966632,Sumbawanga Urban
+2020,Jul,22.55796102,Administrative unit not available
+2020,Aug,19.62362482,Kalambo
+2020,Aug,20.60284624,Sumbawanga Rural
+2020,Aug,21.79683563,Nkasi
+2020,Aug,18.02205054,Sumbawanga Urban
+2020,Aug,24.36116721,Administrative unit not available
+2020,Sep,21.27103515,Kalambo
+2020,Sep,22.26749216,Sumbawanga Rural
+2020,Sep,23.15943746,Nkasi
+2020,Sep,19.49140059,Sumbawanga Urban
+2020,Sep,25.8852315,Administrative unit not available
+2020,Oct,22.36535718,Kalambo
+2020,Oct,24.0451126,Sumbawanga Rural
+2020,Oct,23.509152,Nkasi
+2020,Oct,20.5909425,Sumbawanga Urban
+2020,Oct,26.88404903,Administrative unit not available
+2020,Nov,20.93698951,Kalambo
+2020,Nov,22.75275694,Sumbawanga Rural
+2020,Nov,22.09384417,Nkasi
+2020,Nov,19.60374331,Sumbawanga Urban
+2020,Nov,25.56081398,Administrative unit not available
+2020,Dec,18.88105772,Kalambo
+2020,Dec,20.72307783,Sumbawanga Rural
+2020,Dec,20.49439756,Nkasi
+2020,Dec,17.76911718,Sumbawanga Urban
+2020,Dec,24.15489697,Administrative unit not available
+2021,Jan,18.50512588,Kalambo
+2021,Jan,20.28117301,Sumbawanga Rural
+2021,Jan,20.16470423,Nkasi
+2021,Jan,17.46575146,Sumbawanga Urban
+2021,Jan,23.86651689,Administrative unit not available
+2021,Feb,18.987353,Kalambo
+2021,Feb,20.76153003,Sumbawanga Rural
+2021,Feb,20.78533355,Nkasi
+2021,Feb,17.87427916,Sumbawanga Urban
+2021,Feb,24.64334387,Administrative unit not available
+2021,Mar,19.19386988,Kalambo
+2021,Mar,21.0132742,Sumbawanga Rural
+2021,Mar,20.98421321,Nkasi
+2021,Mar,18.10035658,Sumbawanga Urban
+2021,Mar,25.02620114,Administrative unit not available
+2021,Apr,18.6173091,Kalambo
+2021,Apr,20.51388663,Sumbawanga Rural
+2021,Apr,20.27686262,Nkasi
+2021,Apr,17.57139919,Sumbawanga Urban
+2021,Apr,24.21881569,Administrative unit not available
+2021,May,17.90303595,Kalambo
+2021,May,20.10620012,Sumbawanga Rural
+2021,May,20.29865978,Nkasi
+2021,May,17.0213306,Sumbawanga Urban
+2021,May,24.27034799,Administrative unit not available
+2021,Jun,17.5468062,Kalambo
+2021,Jun,19.11272487,Sumbawanga Rural
+2021,Jun,19.865991,Nkasi
+2021,Jun,16.2614431,Sumbawanga Urban
+2021,Jun,23.38348794,Administrative unit not available
+2021,Jul,16.74545232,Kalambo
+2021,Jul,18.09740828,Sumbawanga Rural
+2021,Jul,18.996474,Nkasi
+2021,Jul,15.28590142,Sumbawanga Urban
+2021,Jul,22.38859038,Administrative unit not available
+2021,Aug,19.63618592,Kalambo
+2021,Aug,20.59956371,Sumbawanga Rural
+2021,Aug,21.65541573,Nkasi
+2021,Aug,17.87118812,Sumbawanga Urban
+2021,Aug,24.30474182,Administrative unit not available
+2021,Sep,21.54180835,Kalambo
+2021,Sep,22.4724186,Sumbawanga Rural
+2021,Sep,23.28951563,Nkasi
+2021,Sep,19.64782434,Sumbawanga Urban
+2021,Sep,26.07838524,Administrative unit not available
+2021,Oct,22.04193476,Kalambo
+2021,Oct,24.23996952,Sumbawanga Rural
+2021,Oct,23.51177101,Nkasi
+2021,Oct,20.8312186,Sumbawanga Urban
+2021,Oct,26.88948519,Administrative unit not available
+2021,Nov,21.25461877,Kalambo
+2021,Nov,23.83468552,Sumbawanga Rural
+2021,Nov,22.47565409,Nkasi
+2021,Nov,20.12372462,Sumbawanga Urban
+2021,Nov,26.31835688,Administrative unit not available
+2021,Dec,21.38631551,Kalambo
+2021,Dec,23.69258625,Sumbawanga Rural
+2021,Dec,22.08243466,Nkasi
+2021,Dec,19.82316332,Sumbawanga Urban
+2021,Dec,25.74456338,Administrative unit not available
+2022,Jan,18.83049733,Kalambo
+2022,Jan,20.953316,Sumbawanga Rural
+2022,Jan,20.53056107,Nkasi
+2022,Jan,17.81155246,Sumbawanga Urban
+2022,Jan,24.29219221,Administrative unit not available
+2022,Feb,18.37979798,Kalambo
+2022,Feb,20.1058691,Sumbawanga Rural
+2022,Feb,20.14654012,Nkasi
+2022,Feb,17.30324755,Sumbawanga Urban
+2022,Feb,23.7893346,Administrative unit not available
+2022,Mar,19.28671138,Kalambo
+2022,Mar,21.15267886,Sumbawanga Rural
+2022,Mar,21.01926915,Nkasi
+2022,Mar,18.19887173,Sumbawanga Urban
+2022,Mar,24.9664647,Administrative unit not available
+2022,Apr,19.34189562,Kalambo
+2022,Apr,21.47934353,Sumbawanga Rural
+2022,Apr,21.09850208,Nkasi
+2022,Apr,18.32827253,Sumbawanga Urban
+2022,Apr,25.22156451,Administrative unit not available
+2022,May,18.67019065,Kalambo
+2022,May,20.63761523,Sumbawanga Rural
+2022,May,20.71460428,Nkasi
+2022,May,17.46185237,Sumbawanga Urban
+2022,May,24.87893948,Administrative unit not available
+2022,Jun,16.77083797,Kalambo
+2022,Jun,18.54613476,Sumbawanga Rural
+2022,Jun,19.28882524,Nkasi
+2022,Jun,15.66189059,Sumbawanga Urban
+2022,Jun,22.77046251,Administrative unit not available
+2022,Jul,17.54929023,Kalambo
+2022,Jul,18.73345077,Sumbawanga Rural
+2022,Jul,19.6842975,Nkasi
+2022,Jul,15.93772174,Sumbawanga Urban
+2022,Jul,22.80796546,Administrative unit not available
+2022,Aug,19.42416184,Kalambo
+2022,Aug,20.37393912,Sumbawanga Rural
+2022,Aug,21.37308814,Nkasi
+2022,Aug,17.59322472,Sumbawanga Urban
+2022,Aug,24.26731461,Administrative unit not available
+2022,Sep,21.1822458,Kalambo
+2022,Sep,22.12700248,Sumbawanga Rural
+2022,Sep,23.0843973,Nkasi
+2022,Sep,19.20611216,Sumbawanga Urban
+2022,Sep,25.8865394,Administrative unit not available
+2022,Oct,23.0023644,Kalambo
+2022,Oct,24.05101922,Sumbawanga Rural
+2022,Oct,24.43907556,Nkasi
+2022,Oct,20.86742796,Sumbawanga Urban
+2022,Oct,27.263707,Administrative unit not available
+2022,Nov,20.44682345,Kalambo
+2022,Nov,23.10854487,Sumbawanga Rural
+2022,Nov,21.40064311,Nkasi
+2022,Nov,19.10985665,Sumbawanga Urban
+2022,Nov,25.20927319,Administrative unit not available
+2022,Dec,18.68856703,Kalambo
+2022,Dec,20.84327926,Sumbawanga Rural
+2022,Dec,20.11725105,Nkasi
+2022,Dec,17.49916697,Sumbawanga Urban
+2022,Dec,23.98009337,Administrative unit not available
+2023,Jan,18.55963229,Kalambo
+2023,Jan,20.50761403,Sumbawanga Rural
+2023,Jan,20.32471263,Nkasi
+2023,Jan,17.50568926,Sumbawanga Urban
+2023,Jan,24.31895308,Administrative unit not available
+2023,Feb,19.29754505,Kalambo
+2023,Feb,21.15736131,Sumbawanga Rural
+2023,Feb,21.09484125,Nkasi
+2023,Feb,18.02428186,Sumbawanga Urban
+2023,Feb,25.26547766,Administrative unit not available
+2023,Mar,18.75809908,Kalambo
+2023,Mar,20.65777872,Sumbawanga Rural
+2023,Mar,20.48700174,Nkasi
+2023,Mar,17.65806109,Sumbawanga Urban
+2023,Mar,24.41953821,Administrative unit not available
+2023,Apr,18.93066103,Kalambo
+2023,Apr,20.6566596,Sumbawanga Rural
+2023,Apr,20.53559105,Nkasi
+2023,Apr,17.73022698,Sumbawanga Urban
+2023,Apr,24.5212525,Administrative unit not available

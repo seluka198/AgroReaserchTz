@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h3 class="text-center text-primary mb-4">🌍 Current Weather in Tanzania's Regions</h3>
+    <div class="row">
+        {% for region, weather in weather_data.items %}
+        <div class="col-md-4 col-sm-6 mb-3">
+            <div class="card shadow h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ region }}</h5>
+                    {% if weather %}
+                        <div style="font-size: 08px; ">
+                            <span><strong>🌡️ Temp:</strong> {{ weather.temperature }}°C</span> |
+                            <span><strong>💧 Humidity:</strong> {{ weather.humidity }}%</span> |
+                            <span><strong>💨 Wind:</strong> {{ weather.wind_speed }} m/s</span> |
+                            <span><strong>☁️ Clouds:</strong> {{ weather.clouds }}%</span>
+                        </div>
+                    {% else %}
+                        <p class="text-danger" style="font-size: 10px;">⚠️ Data not available</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

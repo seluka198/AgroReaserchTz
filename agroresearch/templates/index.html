@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Leaflet Providers -->
+<script src="https://unpkg.com/leaflet-providers@1.13.0/leaflet-providers.min.js"></script>
+
+<!-- Leaflet Control Search plugin -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-search@2.9.8/dist/leaflet-search.min.css" />
+<script src="https://unpkg.com/leaflet-control-search@2.9.8/dist/leaflet-search.min.js"></script>
+
+<style>
+  #map { height: 100vh; }
+  #regionSelectContainer {
+    position: absolute;
+    top: 10px; left: 10px;
+    z-index: 1000;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+</style>
+
+<script>
+  // Initialize map
+  var map = L.map('map').setView([-8.9, 33.5], 7);
+
+  // Base layers
+  var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+  }).addTo(map);
+
+  var satellite = L.tileLayer.provider('Esri.WorldImagery');
+  var hybrid = L.tileLayer.provider('Esri.WorldStreetMap');
+
+  var baseMaps = {
+      "OpenStreetMap": osm,
+      "Satellite": satellite,
+      "Hybrid": hybrid
+  };
+
+  L.control.layers(baseMaps).addTo(map);
+
+  let geojsonLayer;
+
+  fetch("{% url 'rainfall_data' %}")
+    .then(res => res.json())
+    .then(data => {
+      geojsonLayer = L.geoJSON(data, {
+        onEachFeature: function(feature, layer) {
+          const props = feature.properties;
+          layer.bindPopup(
+            `<b>${props.name}</b><br>Region: ${props.region}<br>Rainfall: ${props.rainfall} mm<br>Year: ${props.year}`
+          );
+          layer.feature_name = props.name + " - " + props.region;
+        }
+      }).addTo(map);
+
+      // Search control
+      const searchControl = new L.Control.Search({
+        layer: geojsonLayer,
+        propertyName: 'feature_name',
+        marker: false,
+        moveToLocation: function(latlng, title, map) {
+          map.setView(latlng, 10);
+        }
+      });
+      map.addControl(searchControl);
+      searchControl._input.placeholder = "Search Area or Region...";
+
+      // Dropdown filter
+      document.getElementById('regionSelect').addEventListener('change', function() {
+        const selectedRegion = this.value;
+
+        if (geojsonLayer) {
+          map.removeLayer(geojsonLayer);
+        }
+
+        geojsonLayer = L.geoJSON(data, {
+          filter: function(feature) {
+            return selectedRegion === 'all' || feature.properties.region === selectedRegion;
+          },
+          onEachFeature: function(feature, layer) {
+            const props = feature.properties;
+            layer.bindPopup(
+              `<b>${props.name}</b><br>Region: ${props.region}<br>Rainfall: ${props.rainfall} mm<br>Year: ${props.year}`
+            );
+            layer.feature_name = props.name + " - " + props.region;
+          }
+        }).addTo(map);
+
+        searchControl.setLayer(geojsonLayer);
+      });
+    });
+</script>
+
+{% endblock content %}

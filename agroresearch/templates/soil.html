@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Soil Capability and Location Viewer</h2>
+
+<div id="controls" style="margin-bottom: 10px;">
+    <select id="region-select">
+        <option value="">-- Select Region --</option>
+        <option value="Mbeya">Mbeya</option>
+        <option value="Rukwa">Rukwa</option>
+        <option value="Katavi">Katavi</option>
+        <option value="Songwe">Songwe</option>
+    </select>
+
+    <select id="district-select" disabled>
+        <option value="">-- Select District --</option>
+    </select>
+</div>
+
+<!-- Two side-by-side maps -->
+<div style="display: flex; gap: 10px;">
+    <div id="map" style="height: 350px; width: 40%;"></div>
+    <div id="capability-map" style="height: 350px; width: 60%; border-left: 2px solid #ccc;"></div>
+</div>
+
+<!-- Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    const districtsByRegion = {
+        "Mbeya": ["Mbarali", "Mbeya", "Mbeya C", "Kyela", "Chunya"],
+        "Rukwa": ["Sumbawanga", "Nkasi", "Kalambo","Laela"],
+        "Katavi": ["Mpanda", "Mlele", "Tanganyika"],
+        "Songwe": ["Mbozi", "Ileje", "Songwe", "Momba"]
+    };
+
+    const locationPoints = {
+        "Mbeya-Mbarali": [{ lat: -8.9632, lon: 33.8496, name: "Mbarali HQ - Rujewa" }],
+        "Mbeya-Mbeya": [{ lat: -9.0984, lon: 33.5361, name: "Mbeya HQ - Tukuyu" }],
+        "Mbeya-Mbeya C": [{ lat: -8.9146, lon: 33.4608, name: "Mbeya DC HQ - Lwanjilo" }],
+        "Mbeya-Kyela": [{ lat: -9.5823, lon: 33.6407, name: "Kyela HQ - Kyela Town" }],
+        "Mbeya-Chunya": [{ lat: -8.5402, lon: 33.2619, name: "Chunya HQ - Chunya Town" }],
+
+        "Rukwa-Sumbawanga": [{ lat: -7.9467, lon: 31.6176, name: "Sumbawanga HQ - Sumbawanga Town" }],
+        "Rukwa-Laela": [{ lat: -7.7467, lon: 31.6276, name: "Sumbawanga DC HQ - Laela" }],
+        "Rukwa-Nkasi": [{ lat: -7.3384, lon: 30.7193, name: "Nkasi HQ - Namanyere" }],
+        "Rukwa-Kalambo": [{ lat: -8.4892, lon: 31.1823, name: "Kalambo HQ - Matai" }],
+
+        "Katavi-Mpanda": [{ lat: -6.3435, lon: 31.0672, name: "Mpanda HQ - Mpanda Town" }],
+        "Katavi-Mlele": [{ lat: -6.4569, lon: 31.2533, name: "Mlele HQ - Inyonga" }],
+        "Katavi-Tanganyika": [{ lat: -6.2833, lon: 30.7833, name: "Tanganyika HQ - Kabungu" }],
+
+        "Songwe-Mbozi": [{ lat: -9.0489, lon: 32.9794, name: "Mbozi HQ - Vwawa" }],
+        "Songwe-Ileje": [{ lat: -9.4530, lon: 33.0717, name: "Ileje HQ - Itumba" }],
+        "Songwe-Songwe": [{ lat: -8.9845, lon: 32.7831, name: "Songwe DC HQ - Mkwajuni" }],
+        "Songwe-Tunduma": [{ lat: -9.3008, lon: 32.7666, name: "Tunduma HQ - Tunduma Town" }]
+    };
+
+    const soilCapabilityGeoJsonFiles = {
+        "Mbeya-Mbarali": "{% static 'geojson/mbeya_mbarali.geojson' %}",
+        "Mbeya-Mbeya": "{% static 'geojson/mbeya_mbeya.geojson' %}",
+        "Mbeya-Mbeya C": "{% static 'geojson/mbeya_urban.geojson' %}",
+        "Mbeya-Chunya": "{% static 'geojson/mbeya_chunya.geojson' %}",
+        "Mbeya-Kyela": "{% static 'geojson/mbeya_kyela.geojson' %}",
+        "Rukwa-Nkasi": "{% static 'geojson/rukwa_nkasi.geojson' %}",
+        "Rukwa-Laela": "{% static 'geojson/rukwa_laela.geojson' %}",
+        "Rukwa-Sumbawanga": "{% static 'geojson/rukwa_sumbawanga.geojson' %}",
+        "Rukwa-Kalambo": "{% static 'geojson/rukwa_kalambo.geojson' %}",
+        "Katavi-Mpanda": "{% static 'geojson/katavi_urban.geojson' %}",
+        "Katavi-Mlele": "{% static 'geojson/katavi_mlele.geojson' %}",
+        "Katavi-Tanganyika": "{% static 'geojson/katavi_mpanda.geojson' %}",
+        "Songwe-Mbozi": "{% static 'geojson/songwe_mbozi.geojson' %}"
+        
+    };
+
+    const regionSelect = document.getElementById('region-select');
+    const districtSelect = document.getElementById('district-select');
+
+    const map = L.map('map').setView([-8.9, 33], 7);
+    const baseMaps = {
+        "Streets": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }),
+        "Satellite": L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles &copy; Esri'
+        })
+    };
+    baseMaps["Streets"].addTo(map);
+    L.control.layers(baseMaps).addTo(map);
+
+    const capabilityMap = L.map('capability-map', {
+        zoomControl: false,
+        attributionControl: false
+    }).setView([-8.9, 33], 7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(capabilityMap);
+
+    let locationLayer = null;
+    let geoJsonLayer = null;
+
+    regionSelect.addEventListener('change', function () {
+        const region = this.value;
+        districtSelect.innerHTML = '<option value="">-- Select District --</option>';
+        districtSelect.disabled = true;
+        if (districtsByRegion[region]) {
+            districtSelect.disabled = false;
+            districtsByRegion[region].forEach(d => {
+                const opt = document.createElement('option');
+                opt.value = d;
+                opt.textContent = d;
+                districtSelect.appendChild(opt);
+            });
+        }
+        clearLayers();
+    });
+
+    districtSelect.addEventListener('change', function () {
+        const region = regionSelect.value;
+        const district = this.value;
+        const key = `${region}-${district}`;
+        clearLayers();
+
+        // Add location markers
+        if (locationPoints[key]) {
+            locationLayer = L.layerGroup();
+            locationPoints[key].forEach(pt => {
+                L.marker([pt.lat, pt.lon])
+                    .bindPopup(pt.name)
+                    .addTo(locationLayer);
+            });
+            locationLayer.addTo(map);
+            map.setView([locationPoints[key][0].lat, locationPoints[key][0].lon], 10);
+        }
+
+        // Load soil capability GeoJSON
+        if (soilCapabilityGeoJsonFiles[key]) {
+            fetch(soilCapabilityGeoJsonFiles[key])
+                .then(res => res.json())
+                .then(data => {
+                    geoJsonLayer = L.geoJSON(data, {
+                        style: styleFeature,
+                        onEachFeature: (feature, layer) => {
+                            if (feature.properties && feature.properties.capability) {
+                                layer.bindPopup("Soil Capability: " + feature.properties.capability);
+                            }
+                        }
+                    }).addTo(capabilityMap);
+                    capabilityMap.fitBounds(geoJsonLayer.getBounds());
+                });
+        } else {
+            alert("No soil capability map available for this district.");
+        }
+    });
+
+    function clearLayers() {
+        if (locationLayer) {
+            map.removeLayer(locationLayer);
+            locationLayer = null;
+        }
+        if (geoJsonLayer) {
+            capabilityMap.removeLayer(geoJsonLayer);
+            geoJsonLayer = null;
+        }
+    }
+
+    function styleFeature(feature) {
+        const capability = feature.properties.capability || "";
+        let fillColor = "#FFA500";
+        if (capability === "High") fillColor = "#28a745";
+        else if (capability === "Medium") fillColor = "#ffc107";
+        else if (capability === "Low") fillColor = "#dc3545";
+
+        return {
+            color: "#333",
+            weight: 1,
+            fillColor: fillColor,
+            fillOpacity: 0.6
+        };
+    }
+</script>
+
+{% endblock content %}

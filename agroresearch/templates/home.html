@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+
+
+    <!-- Carousel and Description -->
+    <div class="row gx-4 mb-5">
+        <!-- Carousel -->
+        <div class="col-md-8">
+            <div class="carousel-section position-relative">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'image/mn.JPEG' %}" class="d-block w-100 main-carousel-img" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'image/gi.JPEG' %}" class="d-block w-100 main-carousel-img" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'image/nyanya.JPEG' %}" class="d-block w-100 main-carousel-img" alt="Image 3">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'image/soi.JPEG' %}" class="d-block w-100 main-carousel-img" alt="Image 4">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="col-md-4 d-flex align-items-stretch">
+            <div class="bg-light p-3 rounded shadow-sm w-100 overflow-auto">
+                <h5 class="text-success">AGRO-Research TZ</h5>
+                <ul>
+                   Agriculture is a key pillar of Tanzania’s economy, employing over 65% of the population and driving food security, exports, and rural development. In the Southern Highlands—Rukwa, Katavi, Mbeya, and Songwe the sector is central to livelihoods, with major crops like maize, rice, beans, and coffee. Mbeya leads in coffee and horticulture, while Rukwa and Katavi have abundant but underutilized land. Songwe holds trade potential but faces challenges in irrigation and input access. Common issues across the regions include poor infrastructure, limited use of technology, and weak extension services. However, there is strong potential for growth through climate-smart practices, digital innovation, and targeted investments.
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  
+<!-- Custom Styles -->
+<style>
+    .carousel-section {
+        background-color: antiquewhite;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    .main-carousel-img {
+        height: 500px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+    .img-fluid {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    .card {
+        background: #f9f9f9;
+    }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

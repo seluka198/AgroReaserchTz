@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application of RS & GIS in Agriculture</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 10px;
+            padding: 0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Application of Remote Sensing (RS) & GIS in Agriculture</h1>
+    <p>Remote Sensing (RS) and Geographic Information Systems (GIS) play a crucial role in modern agriculture by enabling better decision-making, monitoring, and planning for sustainable farming practices.</p>
+
+    <h2>Key Applications in Agriculture</h2>
+    
+    <h4>1. Crop Monitoring & Health Assessment</h4>
+    <p>Satellite and drone imagery help detect crop stress, diseases, and nutrient deficiencies using vegetation indices like the NDVI (Normalized Difference Vegetation Index).</p>
+
+    <h4>2. Precision Farming</h4>
+    <p>GIS allows farmers to analyze soil properties and variability, helping in site-specific management practices such as fertilizer and pesticide application.</p>
+
+    <h4>3. Soil Mapping & Analysis</h4>
+    <p>RS and GIS help map soil types, moisture levels, and pH variations, assisting in better crop selection and land-use planning.</p>
+
+    <h4>4. Irrigation Management</h4>
+    <p>Satellite data helps monitor water availability, detect drought conditions, and optimize irrigation scheduling to conserve water.</p>
+
+    <h4>5. Yield Prediction & Forecasting</h4>
+    <p>Historical RS data and GIS-based models predict crop yields, helping policymakers and farmers plan for food security.</p>
+
+    <h4>6. Pest & Disease Control</h4>
+    <p>RS data helps in early detection of pest infestations, allowing timely intervention with targeted spraying and biological controls.</p>
+
+    <h4>7. Climate Change & Risk Assessment</h4>
+    <p>GIS and RS monitor climate variables such as temperature, precipitation, and extreme weather events affecting agriculture.</p>
+
+    <h4>8. Land Use & Agricultural Zoning</h4>
+    <p>GIS helps classify land for agriculture, forestry, and urban expansion, ensuring optimal land-use planning.</p>
+
+    <h3>Technologies Used</h3>
+    <ul>
+        <li><strong>Satellite Data:</strong> Landsat, Sentinel-2, MODIS for crop monitoring.</li>
+        <li><strong>Drone Imaging:</strong> High-resolution field analysis.</li>
+        <li><strong>GIS Software:</strong> QGIS, ArcGIS for spatial analysis.</li>
+        <li><strong>Machine Learning:</strong> AI models for yield prediction and disease detection.</li>
+    </ul>
+
+    <h3>Conclusion</h3>
+    <p>Remote Sensing and GIS have revolutionized agriculture by improving efficiency, reducing costs, and ensuring sustainable farming.</p>
+
+    <a href="{% url 'remote_sensing' %}">Learn about Remote Sensing</a> | 
+    <a href="{% url 'geographical_information_system' %}">Learn about GIS</a>
+
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Select a Region and a Farm</h2>
+<div id="dropdowns" style="display: flex; gap: 10px; margin-bottom: 10px;">
+    <select id="region-select" style="padding:6px; width: 50%;">
+        <option value="">-- Select Region --</option>
+        <option value="Mbeya">Mbeya</option>
+        <option value="Rukwa">Rukwa</option>
+        <option value="Katavi">Katavi</option>
+        <option value="Songwe">Songwe</option>
+    </select>
+    <select id="farm-select" disabled style="padding:6px; width: 50%;">
+        <option value="">-- Select Farm --</option>
+    </select>
+</div>
+
+<div style="display: flex; height: 80vh;">
+    <div id="map" style="flex: 3; height: 100%; margin-right: 10px;"></div>
+    <div id="info-panel" style="flex: 1; padding: 10px; background-color: #f4f4f4; border-left: 1px solid #ccc; overflow-y: auto;">
+        <h3>Farms in Selected Region</h3>
+        <ul id="farm-list">
+            <li>Select a region to view the farms here.</li>
+        </ul>
+        <div id="route-summary" style="margin-top: 20px; text-align: center; background-color: #2ecc71; color: white; padding: 8px 15px; border-radius: 5px; font-weight: bold; box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-size: 16px; min-width: 180px; display: none;"></div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+<script>
+    const map = L.map('map').setView([-8.9, 33], 7);
+
+    const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        attribution: 'Tiles &copy; Esri',
+        maxZoom: 20
+    });
+
+    const topo = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data: &copy; OpenStreetMap contributors',
+        maxZoom: 17
+    });
+
+    L.control.layers({
+        "Street Map": osm,
+        "Satellite Map": satellite,
+        "Topographic Map": topo
+    }).addTo(map);
+
+    const farms = [
+        { name: "Kapunga Rice Project", region: "Mbeya", lat: -8.55, lon: 34.2 },
+        { name: "Mbarali Estate", region: "Mbeya", lat: -8.5919, lon: 34.1345 },
+        { name: "Azimio Mswiswi High Quality Rice Millers", region: "Mbeya", lat: -8.7551, lon: 34.3845 },
+        { name: "Khebhandza Marketing Company Ltd", region: "Mbeya", lat: -8.6543, lon: 34.297 },
+        { name: "Igamba Mpya AMCOS", region: "Songwe", lat: -8.9, lon: 32.8 },
+        { name: "Laela AMCOS", region: "Rukwa", lat: -8.5667, lon: 31.6167 },
+        { name: "Mwamapuli Irrigation Scheme", region: "Katavi", lat: -6.8205, lon: 30.4389 },
+        { name: "Karema Irrigation Scheme", region: "Katavi", lat: -6.8205, lon: 30.4389 },
+        { name: "Igomelo", region: "Mbeya", lat: -8.9, lon: 33.45 },
+        { name: "Kapunga", region: "Mbeya", lat: -8.75, lon: 34.08333 },
+        { name: "Ilongo", region: "Mbeya", lat: -9.1, lon: 33.86667 },
+        { name: "Mtowisa AMCOS", region: "Rukwa", lat: -8.42, lon: 31.62 },
+        { name: "Mbozi", region: "Songwe", lat: -9.05, lon: 32.767 },
+        { name: "Usangu Irrigation schemes", region: "Songwe", lat: -9.3, lon: 32.76667 },
+        { name: "Kibaoni Scheme", region: "Katavi", lat: -6.85, lon: 31.6 }
+    ];
+
+    let markers = [];
+    let routingControl = null;
+    let userLocation = null;
+
+    const regionSelect = document.getElementById('region-select');
+    const farmSelect = document.getElementById('farm-select');
+    const farmList = document.getElementById('farm-list');
+    const routeSummary = document.getElementById('route-summary');
+
+    function locateUser() {
+        return new Promise((resolve, reject) => {
+            if (!navigator.geolocation) {
+                alert("Geolocation is not supported by your browser");
+                reject();
+            }
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
+                    userLocation = [pos.coords.latitude, pos.coords.longitude];
+                    resolve(userLocation);
+                },
+                () => {
+                    alert("Unable to retrieve your location");
+                    reject();
+                }
+            );
+        });
+    }
+
+    function showFarms(region) {
+        markers.forEach(m => map.removeLayer(m));
+        markers = [];
+        hideRouteSummary();
+        clearRouting();
+
+        const regionFarms = farms.filter(f => f.region === region);
+
+        farmSelect.innerHTML = '<option value="">-- Select Farm --</option>';
+        if (regionFarms.length > 0) {
+            farmSelect.disabled = false;
+            regionFarms.forEach(farm => {
+                const option = document.createElement('option');
+                option.value = farm.name;
+                option.textContent = farm.name;
+                farmSelect.appendChild(option);
+
+                const marker = L.marker([farm.lat, farm.lon])
+                    .addTo(map)
+                    .bindPopup(`<b>${farm.name}</b><br>${farm.region}`);
+                markers.push(marker);
+            });
+
+            farmList.innerHTML = '';
+            regionFarms.forEach(farm => {
+                const li = document.createElement('li');
+                li.textContent = farm.name;
+                farmList.appendChild(li);
+            });
+
+            map.setView([regionFarms[0].lat, regionFarms[0].lon], 9);
+            farmSelect.value = regionFarms[0].name;
+            showRouteToFarm(regionFarms[0].name);
+        } else {
+            farmSelect.disabled = true;
+            farmList.innerHTML = '<li>No farms found in this region.</li>';
+        }
+    }
+
+    function clearRouting() {
+        if (routingControl) {
+            map.removeControl(routingControl);
+            routingControl = null;
+        }
+    }
+
+    function hideRouteSummary() {
+        routeSummary.style.display = 'none';
+        routeSummary.textContent = '';
+    }
+
+    function showRouteToFarm(farmName) {
+        if (!userLocation) {
+            alert("User location not available. Please allow location access.");
+            return;
+        }
+        clearRouting();
+        hideRouteSummary();
+
+        const farm = farms.find(f => f.name === farmName);
+        if (!farm) return;
+
+        routingControl = L.Routing.control({
+            waypoints: [
+                L.latLng(userLocation[0], userLocation[1]),
+                L.latLng(farm.lat, farm.lon)
+            ],
+            routeWhileDragging: false,
+            showAlternatives: false,
+            createMarker: () => null,
+            addWaypoints: false
+        }).addTo(map);
+
+        routingControl.on('routesfound', function(e) {
+            const routes = e.routes;
+            if (routes && routes.length > 0) {
+                const summary = routes[0].summary;
+                const distanceKm = (summary.totalDistance / 1000).toFixed(1);
+                const timeMin = Math.round(summary.totalTime / 60);
+                routeSummary.textContent = `${distanceKm} km, ${timeMin} min`;
+                routeSummary.style.display = 'block';
+            }
+        });
+
+        routingControl.on('routeselected', function(e) {
+            map.fitBounds(e.route.bounds);
+        });
+    }
+
+    regionSelect.addEventListener('change', () => {
+        const region = regionSelect.value;
+        if (region) {
+            showFarms(region);
+        } else {
+            farmSelect.innerHTML = '<option value="">-- Select Farm --</option>';
+            farmSelect.disabled = true;
+            farmList.innerHTML = '<li>Select a region to view the farms here.</li>';
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+            clearRouting();
+            hideRouteSummary();
+            map.setView([-8.9, 33], 7);
+        }
+    });
+
+    farmSelect.addEventListener('change', () => {
+        const farmName = farmSelect.value;
+        if (farmName) {
+            showRouteToFarm(farmName);
+        } else {
+            clearRouting();
+            hideRouteSummary();
+        }
+    });
+
+    // Get user location on load
+    locateUser().then(() => {}).catch(() => {});
+</script>
+
+{% endblock content %}

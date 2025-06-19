@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rainfall Map with Chart</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #controls {
+            margin-bottom: 15px;
+        }
+        label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        select {
+            margin-right: 20px;
+            padding: 5px;
+        }
+        #container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        #map {
+            height: 400px;
+            width: 50%;
+            border: 1px solid #ccc;
+        }
+        #chart-container {
+            width: 45%;
+        }
+        #chart {
+            width: 100% !important;
+            height: 400px !important;
+        }
+        h2 {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Rainfall Map and Chart</h2>
+
+<div id="controls">
+    <label for="region-select">Select Region:</label>
+    <select id="region-select">
+        <option value="">--Select Region--</option>
+        <option value="Mbeya">Mbeya</option>
+        <option value="Rukwa">Rukwa</option>
+        <option value="Katavi">Katavi</option>
+        <option value="Songwe">Songwe</option>
+    </select>
+
+    <label for="month-select">Select Month:</label>
+    <select id="month-select">
+        <option value="">--Select Month--</option>
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April">April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+        <option value="year">Whole Year</option>
+    </select>
+</div>
+
+<div id="container">
+    <div id="map"></div>
+    <div id="chart-container">
+        <canvas id="chart"></canvas>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Generate random data for 30 days per month
+    function generateDailyRainfall(min, max) {
+        return Array.from({length: 30}, () => Math.floor(Math.random() * (max - min + 1)) + min);
+    }
+
+    const rainfallData = {
+        "Mbeya": {
+            "January": generateDailyRainfall(3, 100),
+            "February": generateDailyRainfall(2, 9),
+            "March": generateDailyRainfall(4, 11),
+            "April": generateDailyRainfall(3, 9),
+            "May": generateDailyRainfall(1, 2),
+            "June": generateDailyRainfall(0, 0),
+            "July": generateDailyRainfall(0, 0),
+            "August": generateDailyRainfall(0, 0),
+            "September": generateDailyRainfall(0, 1),
+            "October": generateDailyRainfall(3, 8),
+            "November": generateDailyRainfall(4, 10),
+            "December": generateDailyRainfall(5, 12)
+        },
+        "Rukwa": {
+            "January": generateDailyRainfall(2, 8),
+            "February": generateDailyRainfall(2, 7),
+            "March": generateDailyRainfall(3, 9),
+            "April": generateDailyRainfall(2, 7),
+            "May": generateDailyRainfall(0, 0),
+            "June": generateDailyRainfall(0, 0),
+            "July": generateDailyRainfall(0, 0),
+            "August": generateDailyRainfall(0, 0),
+            "September": generateDailyRainfall(0, 1),
+            "October": generateDailyRainfall(3, 7),
+            "November": generateDailyRainfall(4, 9),
+            "December": generateDailyRainfall(4, 10)
+        },
+        "Katavi": {
+            "January": generateDailyRainfall(2, 9),
+            "February": generateDailyRainfall(2, 8),
+            "March": generateDailyRainfall(3, 10),
+            "April": generateDailyRainfall(2, 8),
+            "May": generateDailyRainfall(1, 5),
+            "June": generateDailyRainfall(0, 1),
+            "July": generateDailyRainfall(0, 0),
+            "August": generateDailyRainfall(0, 0),
+            "September": generateDailyRainfall(1, 5),
+            "October": generateDailyRainfall(3, 7),
+            "November": generateDailyRainfall(4, 9),
+            "December": generateDailyRainfall(5, 11)
+        },
+        "Songwe": {
+            "January": generateDailyRainfall(3, 10),
+            "February": generateDailyRainfall(2, 9),
+            "March": generateDailyRainfall(3, 10),
+            "April": generateDailyRainfall(2, 8),
+            "May": generateDailyRainfall(1, 3),
+            "June": generateDailyRainfall(0, 0),
+            "July": generateDailyRainfall(0, 0),
+            "August": generateDailyRainfall(0, 1),
+            "September": generateDailyRainfall(2, 5),
+            "October": generateDailyRainfall(3, 7),
+            "November": generateDailyRainfall(4, 10),
+            "December": generateDailyRainfall(5, 11)
+        },
+       
+    };
+
+    const regionCoords = {
+        "Mbeya": [-9.32, 33.70],
+        "Rukwa": [-7.80, 31.40],
+        "Katavi": [-6.82, 31.43],
+        "Songwe": [-9.25, 32.60],
+
+    };
+
+    const map = L.map('map').setView([-8.5, 33], 7);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 13,
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    let marker;
+
+    const ctx = document.getElementById('chart').getContext('2d');
+    let chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Array.from({length: 30}, (_, i) => `Day ${i + 1}`),
+            datasets: [{
+                label: 'Rainfall (mm)',
+                data: rainfallData["Mbeya"]["January"],
+                backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Rainfall (mm)'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Days'
+                    }
+                }
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Daily Rainfall in January for Mbeya Region'
+                }
+            }
+        }
+    });
+
+    const regionSelect = document.getElementById('region-select');
+    const monthSelect = document.getElementById('month-select');
+
+    function updateMapAndChart() {
+        const selectedRegion = regionSelect.value;
+        const selectedMonth = monthSelect.value;
+
+        if (marker) {
+            map.removeLayer(marker);
+        }
+
+        if (selectedRegion) {
+            const coords = regionCoords[selectedRegion];
+            map.setView(coords, 9);
+
+            let popupText = `<b>${selectedRegion}</b><br>`;
+            if (selectedMonth && selectedMonth !== "year") {
+                const total = rainfallData[selectedRegion][selectedMonth].reduce((a, b) => a + b, 0);
+                popupText += `${selectedMonth}: ${total} mm (total)`;
+            } else if (selectedMonth === "year") {
+                popupText += `Rainfall for the whole year`;
+            } else {
+                popupText += 'Select a month to see rainfall';
+            }
+
+            marker = L.marker(coords).addTo(map).bindPopup(popupText).openPopup();
+        }
+
+        if (selectedRegion) {
+            if (selectedMonth === "year" || selectedMonth === "") {
+                const months = Object.keys(rainfallData[selectedRegion]);
+                const monthlyTotals = months.map(m =>
+                    rainfallData[selectedRegion][m].reduce((a, b) => a + b, 0)
+                );
+                chart.data.labels = months;
+                chart.data.datasets[0].data = monthlyTotals;
+                chart.options.plugins.title.text = `Annual Rainfall for ${selectedRegion} Region`;
+            } else {
+                const daily = rainfallData[selectedRegion][selectedMonth];
+                chart.data.labels = daily.map((_, i) => `Day ${i + 1}`);
+                chart.data.datasets[0].data = daily;
+                chart.options.plugins.title.text = `Daily Rainfall in ${selectedMonth} for ${selectedRegion} Region`;
+            }
+            chart.update();
+        }
+    }
+
+    regionSelect.addEventListener('change', updateMapAndChart);
+    monthSelect.addEventListener('change', updateMapAndChart);
+
+    updateMapAndChart();
+</script>
+
+</body>
+</html>
+{% endblock content %}

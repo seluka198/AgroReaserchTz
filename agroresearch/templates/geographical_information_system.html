@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geographical Information System (GIS)</title>
+    <style>
+        body {
+            font-family: Times New Roman, sans-serif;
+            margin: 10px;
+            padding: 0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Geographical Information System (GIS)</h1>
+    <p><strong>GIS</strong> is a system designed to capture, store, manipulate, analyze, manage, and present spatial or geographic data.</p>
+
+    <h2>Components of GIS</h2>
+    <ul>
+        <li><strong>Hardware:</strong> Computers, servers, GPS devices, and mobile devices.</li>
+        <li><strong>Software:</strong> GIS software like QGIS, ArcGIS, and Google Earth Engine.</li>
+        <li><strong>Data:</strong> Spatial (maps, satellite imagery) and non-spatial (tables, databases) data.</li>
+        <li><strong>People:</strong> GIS professionals, researchers, and decision-makers.</li>
+        <li><strong>Methods:</strong> Techniques for data collection, analysis, and visualization.</li>
+    </ul>
+
+    <h2>Applications of GIS</h2>
+    <ul>
+        <li><strong>Urban Planning:</strong> Managing city infrastructure, zoning, and land use.</li>
+        <li><strong>Environmental Management:</strong> Monitoring deforestation, pollution, and natural resources.</li>
+        <li><strong>Disaster Response:</strong> Mapping flood zones, wildfire risk, and emergency routes.</li>
+        <li><strong>Transportation:</strong> Route optimization, traffic analysis, and logistics planning.</li>
+        <li><strong>Agriculture:</strong> Precision farming, soil analysis, and crop monitoring.</li>
+    </ul>
+
+    <h2>GIS Data Types</h2>
+    <ul>
+        <li><strong>Vector Data:</strong> Points (locations), Lines (roads, rivers), and Polygons (land boundaries).</li>
+        <li><strong>Raster Data:</strong> Satellite images, aerial photos, and elevation models.</li>
+    </ul>
+
+    <h2>GIS Tools & Technologies</h2>
+    <ul>
+        <li><strong>QGIS:</strong> Open-source GIS software.</li>
+        <li><strong>ArcGIS:</strong> A powerful GIS platform by Esri.</li>
+        <li><strong>Google Earth Engine:</strong> Cloud-based geospatial analysis.</li>
+        <li><strong>PostGIS:</strong> A spatial database extension for PostgreSQL.</li>
+        <li><strong>Leaflet & Mapbox:</strong> Web-based mapping libraries.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>GIS is a powerful tool for spatial analysis and decision-making, transforming the way we understand geographic information.</p>
+
+    <a href="{% url 'remote_sensing' %}">Learn about Remote Sensing</a> | 
+    <a href="{% url 'application' %}">Application of GIS & RS</a>
+</body>
+</html>
+{% endblock content %}

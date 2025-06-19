@@ -1,0 +1,84 @@
+District,Ward,Soil_pH,Soil_Type,Temp,Annual_Rainfall
+Nkasi,Chala,6.8,Sandy,20.5,1250
+Nkasi,Isale,5.1,Sandy,18,1108
+Nkasi,Kabwe,5.8,Silty,20.3,1219
+Nkasi,Kala,7.4,Sandy,25.8,1252
+Nkasi,Kate,6.2,Sandy,25.9,1366
+Nkasi,Kipande,7.2,Sandy,18.7,1400
+Nkasi,Kipili,7,Clay,18.7,900
+Nkasi,Kirando,7.2,Clay,26,972
+Nkasi,Korongwe,5.3,Sandy,23.1,1177
+Nkasi,Mkwamba,5.7,Clay,21.6,1138
+Nkasi,Mtenga,5.3,Clay,19.2,1137
+Nkasi,Namanyere,6.9,Silty,19.6,1339
+Nkasi,Ninde,5.4,Sandy,22,896
+Nkasi,Nkandasi,6.8,Sandy,21.1,1336
+Nkasi,Nkomolo,5.6,Loam,19.6,877
+Nkasi,Sintali,5.1,Sandy,23.2,1190
+Nkasi,Wampembe,6,Silty,18.3,977
+Kalambo,Katazi,6.1,Sandy,22.8,1087
+Kalambo,Katete,5.8,Loam,19.4,1368
+Kalambo,Kilesha,6,Sandy,23.3,1219
+Kalambo,Kisumba,7,Clay,19.4,1247
+Kalambo,Legeza_Mwendo,5.9,Clay,18.4,1042
+Kalambo,Lyowa,5.5,Sandy,18.7,1055
+Kalambo,Mambwekenya,7.1,Sandy,20.8,1149
+Kalambo,Matai,6.7,Clay,19.4,1358
+Kalambo,Mbuluma,5.1,Sandy,23.2,1203
+Kalambo,Mkali,6.7,Sandy,21.7,1152
+Kalambo,Mkowe,6,Loam,22.4,892
+Kalambo,Mnamba,5.2,Silty,23.5,935
+Kalambo,Mpombwe,6.7,Sandy,24.5,958
+Kalambo,Msanzi,5.9,Clay,25.2,1254
+Kalambo,Mwazye,5.8,Silty,19.1,1156
+Kalambo,Mwembe_Nkoswe,7.2,Loam,19,1158
+Kalambo,Samazi,6.6,Sandy,19.8,1210
+Kalambo,Sopa,5.1,Clay,20.3,869
+Kalambo,Sundu,6.2,Silty,19.6,1369
+Kalambo,Ulumi,6.5,Sandy,21,1309
+Sumbawanga Rural,Ikozi,5.6,Loam,25.1,934
+Sumbawanga Rural,Ilemba,7,Clay,22.8,887
+Sumbawanga Rural,Kaengesa,5.8,Loam,24.8,988
+Sumbawanga Rural,Kalambanzite,5.6,Loam,22.7,1266
+Sumbawanga Rural,Kalumbaleza,6.4,Loam,18.2,1041
+Sumbawanga Rural,Kanda,7.4,Clay,23.8,893
+Sumbawanga Rural,Kaoze,5.4,Silty,20.8,1194
+Sumbawanga Rural,Kapenta,5.5,Silty,20.2,1024
+Sumbawanga Rural,Kasanzama,6.2,Loam,24.7,1140
+Sumbawanga Rural,Kilangawana,6.7,Silty,24.7,1045
+Sumbawanga Rural,Kipeta,6.1,Silty,25.9,883
+Sumbawanga Rural,Laela,6.9,Sandy,21.6,998
+Sumbawanga Rural,Lusaka,6.7,Silty,25,1084
+Sumbawanga Rural,Lyangalile,5.9,Loam,23.4,1235
+Sumbawanga Rural,Mfinga,6.9,Clay,19,1333
+Sumbawanga Rural,Miangalua,5,Clay,18.4,1349
+Sumbawanga Rural,Milepa,6.3,Loam,18.2,852
+Sumbawanga Rural,Mnokola,6.7,Loam,18.5,1265
+Sumbawanga Rural,Mpui,5.6,Clay,24.1,977
+Sumbawanga Rural,Mpwapwa,5.3,Silty,24.1,1298
+Sumbawanga Rural,Msanda_Muungano,6.9,Loam,22.8,944
+Sumbawanga Rural,Mtowisa,6.3,Loam,24.2,904
+Sumbawanga Rural,Muze,5.6,Sandy,21,1267
+Sumbawanga Rural,Mwadui,7.4,Sandy,20.8,895
+Sumbawanga Rural,Nankanga,5.1,Sandy,23.8,957
+Sumbawanga Rural,Sandulula,7.1,Sandy,18.8,1010
+Sumbawanga Rural,Zimba,6.2,Silty,23.7,982
+Sumbawanga Urban,Chanji,5.9,Clay,19.5,1242
+Sumbawanga Urban,Izia,5.3,Loam,25.2,1191
+Sumbawanga Urban,Kasense,5.8,Loam,23.9,932
+Sumbawanga Urban,Katandala,6.2,Sandy,20.3,1364
+Sumbawanga Urban,Kizwite,6,Sandy,18.2,1398
+Sumbawanga Urban,Lwiche,7.2,Loam,25.1,1320
+Sumbawanga Urban,Mafulala,6.4,Loam,25.5,1051
+Sumbawanga Urban,Majengo,5.7,Sandy,25.2,1350
+Sumbawanga Urban,Malangali,6.7,Loam,19.2,1083
+Sumbawanga Urban,Matanga,5.9,Loam,19.3,873
+Sumbawanga Urban,Mazwi,6.8,Loam,22.6,1071
+Sumbawanga Urban,Milanzi,6.2,Clay,20.1,908
+Sumbawanga Urban,Mollo,7.1,Clay,19.6,880
+Sumbawanga Urban,Momoka,6.1,Silty,21.6,967
+Sumbawanga Urban,Msua,5.2,Sandy,23.8,1281
+Sumbawanga Urban,Ntendo,5.8,Clay,23.4,1179
+Sumbawanga Urban,Old_Sumbawanga,5.5,Sandy,25.5,1393
+Sumbawanga Urban,Pito,6.4,Sandy,25.8,1140
+Sumbawanga Urban,Senga,5.7,Loam,23.5,1235
